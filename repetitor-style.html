@@ -1,0 +1,1739 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Елена Александровна — Репетитор по математике и физике | ЕГЭ, ОГЭ, школа</title>
+  <meta name="description" content="Индивидуальные занятия по математике и физике. Подготовка к ЕГЭ и ОГЭ от сертифицированного эксперта. 15 лет стажа, средний балл 84.6. Бесплатная вводная консультация.">
+  
+  <!-- Fonts: Onest (clean geometric neo-grotesque matching Cygre from Repetitor.ru) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%231BAC72'/><text x='50' y='68' font-size='50' font-family='sans-serif' font-weight='900' fill='white' text-anchor='middle'>ЕА</text></svg>">
+
+  <style>
+    /* ==========================================================================
+       DESIGN TOKENS (Repetitor.ru System)
+       ========================================================================== */
+    :root {
+      --font-main: 'Onest', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      --bg-page: #F5F5F4;
+      --bg-card: #FFFFFF;
+      --color-primary: #1BAC72;
+      --color-primary-hover: #169662;
+      --color-primary-light: rgba(27, 172, 114, 0.08);
+      --color-text-main: #212120;
+      --color-text-muted: #666666;
+      --color-text-light: #999999;
+      --color-blue: #315EFB;
+      --color-blue-bg: #F0F4FF;
+      --color-red: #EA4335;
+      --color-amber: #F59E0B;
+      --color-purple: #8B5CF6;
+      --border-subtle: #E8E8E6;
+      --radius-banner: 32px;
+      --radius-card: 16px;
+      --radius-sm: 8px;
+      --radius-pill: 100px;
+      --shadow-hover: 0 18px 40px rgba(0, 0, 0, 0.07);
+      --shadow-modal: 0 24px 64px rgba(0, 0, 0, 0.25);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background-color: var(--bg-page);
+      color: var(--color-text-main);
+      font-family: var(--font-main);
+      line-height: 1.5;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Fluid full-width container (no "ears", completely responsive) */
+    .container-fluid {
+      width: 100%;
+      padding-left: clamp(20px, 4vw, 64px);
+      padding-right: clamp(20px, 4vw, 64px);
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1360px;
+      margin: 0 auto;
+      padding: 0 clamp(20px, 3vw, 40px);
+    }
+
+    /* ==========================================================================
+       HEADER (Floating, transparent on top, solid on scroll)
+       ========================================================================== */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 100;
+      background: transparent;
+      border-bottom: 1px solid transparent;
+      padding-top: 20px;
+      padding-bottom: 20px;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    header.is-scrolled {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border-subtle);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+      padding-top: 12px;
+      padding-bottom: 12px;
+    }
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 100%;
+    }
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      font-size: 24px;
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      color: var(--color-text-main);
+      text-transform: uppercase;
+    }
+    .brand-logo span.dot-pro {
+      color: var(--color-primary);
+    }
+
+    .nav-list {
+      display: flex;
+      align-items: center;
+      gap: clamp(20px, 2.5vw, 40px);
+      list-style: none;
+    }
+    .nav-list a {
+      text-decoration: none;
+      color: var(--color-text-main);
+      font-size: 16px;
+      font-weight: 600;
+      transition: color 0.15s;
+    }
+    .nav-list a:hover {
+      color: var(--color-primary);
+    }
+
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    .btn-phone-header {
+      text-decoration: none;
+      color: var(--color-text-main);
+      font-size: 15px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 18px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border-subtle);
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(8px);
+      transition: all 0.2s;
+    }
+    header.is-scrolled .btn-phone-header {
+      background: var(--bg-page);
+    }
+    .btn-phone-header:hover {
+      border-color: var(--color-text-main);
+      background: #FFFFFF;
+    }
+    .btn-header-cta {
+      display: inline-flex;
+      align-items: center;
+      background: var(--color-primary);
+      color: #FFFFFF;
+      padding: 12px 26px;
+      border-radius: var(--radius-sm);
+      font-size: 15px;
+      font-weight: 800;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s;
+      box-shadow: 0 4px 14px rgba(27, 172, 114, 0.25);
+    }
+    .btn-header-cta:hover {
+      background: var(--color-primary-hover);
+      transform: translateY(-1px);
+    }
+
+    /* ==========================================================================
+       HERO BANNER (Offset under fixed header, 3D mint graphics & cutout tutor)
+       ========================================================================== */
+    .hero-wrap {
+      padding-top: 110px;
+      padding-bottom: 48px;
+    }
+    .hero-banner {
+      background-color: var(--color-primary);
+      border-radius: var(--radius-banner);
+      padding: clamp(40px, 5vw, 64px) clamp(32px, 5vw, 64px) 0;
+      display: grid;
+      grid-template-columns: 1.25fr 0.85fr;
+      align-items: flex-end;
+      gap: 32px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 14px 40px rgba(27, 172, 114, 0.22);
+    }
+
+    /* 3D-styled chart & graph backdrop on green shape */
+    .hero-chart-backdrop {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      width: 580px;
+      height: 480px;
+      pointer-events: none;
+      opacity: 0.85;
+      z-index: 1;
+    }
+
+    .hero-content {
+      padding-bottom: clamp(40px, 5vw, 64px);
+      color: #FFFFFF;
+      position: relative;
+      z-index: 3;
+    }
+    .hero-title {
+      font-size: clamp(38px, 4.2vw, 56px);
+      font-weight: 800;
+      line-height: 1.12;
+      letter-spacing: -0.03em;
+      margin-bottom: 32px;
+      text-transform: uppercase;
+    }
+
+    /* Search/Wizard Selector */
+    .hero-wizard {
+      background: #FFFFFF;
+      border-radius: 14px;
+      padding: 8px 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.14);
+      margin-bottom: 20px;
+    }
+    .wizard-icon-select {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 14px;
+    }
+    .wizard-icon-select svg {
+      color: var(--color-primary);
+      flex-shrink: 0;
+    }
+    .wizard-select {
+      width: 100%;
+      border: none;
+      outline: none;
+      font-family: var(--font-main);
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--color-text-main);
+      background: transparent;
+      cursor: pointer;
+    }
+    .wizard-btn {
+      background: var(--color-primary);
+      color: #FFFFFF;
+      font-family: var(--font-main);
+      font-weight: 800;
+      font-size: 16px;
+      padding: 16px 32px;
+      border-radius: 10px;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.2s;
+      white-space: nowrap;
+    }
+    .wizard-btn:hover {
+      background: var(--color-primary-hover);
+    }
+
+    /* Clickable Example Pills */
+    .hero-examples {
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.92);
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .hero-pill-link {
+      background: rgba(255, 255, 255, 0.22);
+      color: #FFFFFF;
+      padding: 6px 14px;
+      border-radius: var(--radius-pill);
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 13px;
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .hero-pill-link:hover {
+      background: #FFFFFF;
+      color: var(--color-primary);
+    }
+
+    /* Cutout Character Standing in Front of 3D Backdrop */
+    .hero-image-col {
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      position: relative;
+      z-index: 2;
+      height: 100%;
+    }
+    .tutor-cutout-img {
+      max-width: 100%;
+      height: auto;
+      max-height: 520px;
+      object-fit: contain;
+      display: block;
+      filter: drop-shadow(0 14px 30px rgba(0, 0, 0, 0.2));
+      transform-origin: bottom center;
+    }
+
+    /* ==========================================================================
+       STATS ROW (with "Немного цифр обо мне" & curved doodle arrow)
+       ========================================================================== */
+    .stats-section {
+      padding: 40px 0 72px;
+    }
+    .stats-row {
+      display: grid;
+      grid-template-columns: 240px 1fr 1fr 1fr;
+      align-items: center;
+      gap: clamp(24px, 4vw, 48px);
+    }
+    .stats-label-col {
+      font-size: 20px;
+      font-weight: 800;
+      line-height: 1.25;
+      color: var(--color-text-main);
+      text-transform: uppercase;
+      letter-spacing: -0.01em;
+    }
+    .stats-arrow {
+      width: 72px;
+      height: 26px;
+      display: block;
+      margin-top: 8px;
+      stroke: var(--color-primary);
+    }
+    .stat-box {
+      display: flex;
+      flex-direction: column;
+    }
+    .stat-number {
+      font-size: 44px;
+      font-weight: 900;
+      line-height: 1;
+      letter-spacing: -0.02em;
+      color: var(--color-text-main);
+      margin-bottom: 8px;
+    }
+    .stat-desc {
+      font-size: 15px;
+      color: var(--color-text-muted);
+      font-weight: 500;
+      line-height: 1.4;
+    }
+
+    /* ==========================================================================
+       BENTO GRID: НАПРАВЛЕНИЯ ПОДГОТОВКИ
+       ========================================================================== */
+    .section-bento {
+      padding: 32px 0 96px;
+    }
+    .section-head-bento {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 36px;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .section-title-wrap {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .section-h2-title {
+      font-size: clamp(28px, 3.5vw, 40px);
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      color: var(--color-text-main);
+      text-transform: uppercase;
+    }
+    .badge-pill-online {
+      background: var(--color-blue-bg);
+      color: var(--color-blue);
+      font-size: 13px;
+      font-weight: 800;
+      padding: 5px 14px;
+      border-radius: var(--radius-pill);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    /* Bento Grid Container */
+    .bento-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 20px;
+    }
+    .bento-card {
+      background: var(--bg-card);
+      border-radius: var(--radius-card);
+      padding: 32px 28px;
+      text-decoration: none;
+      color: var(--color-text-main);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: none;
+      border: none;
+      position: relative;
+      overflow: hidden;
+    }
+    .bento-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    /* Bento column spans */
+    .bento-col-8 { grid-column: span 8; }
+    .bento-col-4 { grid-column: span 4; }
+    .bento-col-6 { grid-column: span 6; }
+    .bento-col-12 { grid-column: span 12; }
+
+    /* Bento typography with colored accents */
+    .bento-card-title {
+      font-size: 24px;
+      font-weight: 800;
+      line-height: 1.25;
+      margin-bottom: 12px;
+      letter-spacing: -0.01em;
+    }
+    .accent-green { color: var(--color-primary); }
+    .accent-blue { color: var(--color-blue); }
+    .accent-red { color: var(--color-red); }
+    .accent-amber { color: var(--color-amber); }
+    .accent-purple { color: var(--color-purple); }
+
+    .bento-card-text {
+      font-size: 15px;
+      color: var(--color-text-muted);
+      line-height: 1.55;
+      margin-bottom: 24px;
+    }
+
+    /* Topic Tabs inside cards */
+    .topic-tags-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 24px;
+    }
+    .topic-tag {
+      background: var(--bg-page);
+      color: var(--color-text-main);
+      font-size: 13px;
+      font-weight: 700;
+      padding: 6px 14px;
+      border-radius: 8px;
+    }
+
+    .bento-card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 16px;
+      border-top: 1px solid var(--border-subtle);
+    }
+    .bento-price {
+      font-size: 17px;
+      font-weight: 900;
+      color: var(--color-primary);
+    }
+    .bento-action-arrow {
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--color-text-muted);
+      transition: transform 0.2s, color 0.2s;
+    }
+    .bento-card:hover .bento-action-arrow {
+      transform: translateX(6px);
+      color: var(--color-primary);
+    }
+
+    /* ==========================================================================
+       ПЛЮСЫ РАБОТЫ СО МНОЙ (4-Quadrant Rounded Super-Circle Hub)
+       ========================================================================== */
+    .section-pillars {
+      padding: 40px 0 100px;
+    }
+    .pillars-head {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+    .pillars-h2 {
+      font-size: clamp(30px, 3.8vw, 44px);
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    .pillars-sub {
+      font-size: 17px;
+      color: var(--color-text-muted);
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    /* 4-Sector Circular Layout Hub */
+    .circle-hub-wrap {
+      position: relative;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+    .circle-hub-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    .hub-quadrant {
+      background: var(--bg-card);
+      padding: 44px 36px;
+      box-shadow: none;
+      border: none;
+      transition: transform 0.25s, box-shadow 0.25s;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+    .hub-quadrant:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    /* Quadrant Border Radii creating a super-circle */
+    .quadrant-tl { border-radius: 72px 20px 20px 20px; }
+    .quadrant-tr { border-radius: 20px 72px 20px 20px; }
+    .quadrant-bl { border-radius: 20px 20px 20px 72px; }
+    .quadrant-br { border-radius: 20px 20px 72px 20px; }
+
+    .hub-quadrant-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+    .hub-icon-wrap {
+      width: 56px;
+      height: 56px;
+      border-radius: 16px;
+      background: var(--color-primary-light);
+      color: var(--color-primary);
+      display: grid;
+      place-items: center;
+    }
+    .hub-step-num {
+      font-size: 14px;
+      font-weight: 900;
+      color: var(--color-text-light);
+      background: var(--bg-page);
+      padding: 4px 10px;
+      border-radius: 6px;
+    }
+    .hub-quadrant-title {
+      font-size: 20px;
+      font-weight: 800;
+      line-height: 1.3;
+      margin-bottom: 12px;
+      letter-spacing: -0.01em;
+    }
+    .hub-quadrant-desc {
+      font-size: 15px;
+      color: var(--color-text-muted);
+      line-height: 1.6;
+    }
+
+    /* Center floating circular badge */
+    .hub-center-badge {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: var(--color-primary);
+      color: #FFFFFF;
+      box-shadow: 0 10px 30px rgba(27, 172, 114, 0.4);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      z-index: 10;
+      border: 6px solid var(--bg-page);
+      pointer-events: none;
+    }
+    .hub-center-badge span.center-num {
+      font-size: 24px;
+      font-weight: 900;
+      line-height: 1;
+    }
+    .hub-center-badge span.center-text {
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-top: 2px;
+    }
+
+    /* ==========================================================================
+       ДИПЛОМЫ И КВАЛИФИКАЦИЯ (Full-width edge-to-edge #1BAC72 green section + 3D graphics)
+       ========================================================================== */
+    .section-diplomas-full {
+      background: var(--color-primary);
+      color: #FFFFFF;
+      padding: clamp(70px, 8vw, 110px) 0;
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+    }
+    /* Rich 3D mathematical geometry in background */
+    .diplomas-3d-backdrop {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .diplomas-head {
+      text-align: center;
+      margin-bottom: 56px;
+      position: relative;
+      z-index: 2;
+    }
+    .diplomas-h2 {
+      font-size: clamp(30px, 3.8vw, 44px);
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    .diplomas-sub {
+      font-size: 17px;
+      color: rgba(255, 255, 255, 0.9);
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    .diplomas-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      position: relative;
+      z-index: 2;
+    }
+    .diploma-card {
+      background: #FFFFFF;
+      border-radius: var(--radius-card);
+      overflow: hidden;
+      cursor: pointer;
+      color: var(--color-text-main);
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.16);
+      transition: transform 0.25s;
+    }
+    .diploma-card:hover {
+      transform: translateY(-8px);
+    }
+    .diploma-thumb-box {
+      height: 220px;
+      position: relative;
+      background: #FAFAFA;
+      overflow: hidden;
+    }
+    .diploma-thumb-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s;
+    }
+    .diploma-card:hover .diploma-thumb-box img {
+      transform: scale(1.04);
+    }
+    .diploma-zoom-pill {
+      position: absolute;
+      bottom: 12px;
+      right: 12px;
+      background: rgba(33, 33, 32, 0.9);
+      color: #FFFFFF;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 6px 12px;
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .diploma-body {
+      padding: 24px;
+    }
+    .diploma-title {
+      font-size: 17px;
+      font-weight: 800;
+      line-height: 1.3;
+      margin-bottom: 6px;
+    }
+    .diploma-desc {
+      font-size: 14px;
+      color: var(--color-text-muted);
+    }
+
+    /* Lightbox Modal */
+    .lightbox-modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(18, 18, 18, 0.88);
+      backdrop-filter: blur(8px);
+      z-index: 1000;
+      display: none;
+      place-items: center;
+      padding: 20px;
+    }
+    .lightbox-modal.is-active {
+      display: grid;
+    }
+    .lightbox-dialog {
+      background: #FFFFFF;
+      border-radius: 20px;
+      max-width: 860px;
+      width: 100%;
+      overflow: hidden;
+      position: relative;
+      box-shadow: var(--shadow-modal);
+    }
+    .lightbox-close-btn {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: #FFFFFF;
+      border: 1px solid var(--border-subtle);
+      font-size: 20px;
+      font-weight: 800;
+      cursor: pointer;
+      display: grid;
+      place-items: center;
+      z-index: 10;
+    }
+    .lightbox-image-box img {
+      width: 100%;
+      max-height: 520px;
+      object-fit: contain;
+      background: #F8F8F7;
+      display: block;
+    }
+    .lightbox-footer-info {
+      padding: 24px 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid var(--border-subtle);
+    }
+
+    /* ==========================================================================
+       ОТЗЫВЫ УЧЕНИКОВ И РОДИТЕЛЕЙ (with External Platform Badges)
+       ========================================================================== */
+    .section-reviews {
+      padding: 80px 0;
+    }
+    .reviews-head {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+    .reviews-h2 {
+      font-size: clamp(30px, 3.8vw, 44px);
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    .reviews-sub {
+      font-size: 17px;
+      color: var(--color-text-muted);
+    }
+
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .review-item {
+      background: var(--bg-card);
+      border-radius: var(--radius-card);
+      padding: 32px;
+      box-shadow: none;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .review-item:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .review-platform-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--color-text-main);
+      background: var(--bg-page);
+      padding: 5px 12px;
+      border-radius: var(--radius-pill);
+      margin-bottom: 16px;
+      align-self: flex-start;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .review-platform-badge:hover {
+      background: #EAEAEA;
+    }
+    .review-stars {
+      color: #FFB800;
+      font-size: 17px;
+      letter-spacing: 2px;
+      margin-bottom: 16px;
+    }
+    .review-text {
+      font-size: 15px;
+      line-height: 1.65;
+      color: var(--color-text-main);
+      margin-bottom: 24px;
+      flex-grow: 1;
+    }
+    .review-author-wrap {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding-top: 18px;
+      border-top: 1px solid var(--border-subtle);
+    }
+    .author-circle {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--color-primary-light);
+      color: var(--color-primary);
+      display: grid;
+      place-items: center;
+      font-weight: 800;
+      font-size: 15px;
+    }
+    .author-name {
+      font-size: 15px;
+      font-weight: 800;
+    }
+    .author-meta {
+      font-size: 13px;
+      color: var(--color-text-muted);
+    }
+
+    /* ==========================================================================
+       ЗАПИСАТЬСЯ НА БЕСПЛАТНУЮ КОНСУЛЬТАЦИЮ (CTA Banner)
+       ========================================================================== */
+    .section-booking {
+      padding: 32px 0 80px;
+    }
+    .cta-banner {
+      background: #FFFFFF;
+      border-radius: var(--radius-banner);
+      padding: clamp(40px, 5vw, 64px);
+      box-shadow: none;
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      align-items: center;
+      gap: 56px;
+    }
+    .cta-text-col h2 {
+      font-size: clamp(28px, 3.5vw, 40px);
+      font-weight: 900;
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+    .cta-text-col p {
+      font-size: 16px;
+      color: var(--color-text-muted);
+      line-height: 1.65;
+      margin-bottom: 32px;
+    }
+    .cta-contacts-list {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      font-size: 16px;
+    }
+    .cta-contacts-list a {
+      color: var(--color-text-main);
+      text-decoration: none;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .cta-contacts-list a:hover {
+      color: var(--color-primary);
+    }
+
+    .form-col {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .form-input-field, .form-select-field {
+      width: 100%;
+      background: var(--bg-page);
+      border: 1px solid var(--border-subtle);
+      border-radius: 10px;
+      padding: 16px 20px;
+      font-family: var(--font-main);
+      font-size: 15px;
+      color: var(--color-text-main);
+      outline: none;
+      transition: all 0.2s;
+    }
+    .form-input-field:focus, .form-select-field:focus {
+      border-color: var(--color-primary);
+      background: #FFFFFF;
+      box-shadow: 0 0 0 3px var(--color-primary-light);
+    }
+    .btn-submit-booking {
+      background: var(--color-primary);
+      color: #FFFFFF;
+      font-family: var(--font-main);
+      font-size: 16px;
+      font-weight: 800;
+      padding: 18px 28px;
+      border-radius: 10px;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+    }
+    .btn-submit-booking:hover {
+      background: var(--color-primary-hover);
+      transform: translateY(-2px);
+    }
+    .form-disclaimer {
+      font-size: 13px;
+      color: var(--color-text-light);
+      text-align: center;
+      line-height: 1.45;
+    }
+
+    /* Floating Vibrant Green WhatsApp Pill (Bright, Pulsing, High Impact) */
+    .floating-support-pill {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      background: var(--color-primary);
+      color: #FFFFFF;
+      border-radius: var(--radius-pill);
+      padding: 12px 24px 12px 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      box-shadow: 0 10px 28px rgba(27, 172, 114, 0.45);
+      border: 2px solid rgba(255, 255, 255, 0.4);
+      z-index: 99;
+      text-decoration: none;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .floating-support-pill:hover {
+      background: var(--color-primary-hover);
+      transform: translateY(-3px) scale(1.03);
+      box-shadow: 0 14px 34px rgba(27, 172, 114, 0.55);
+    }
+    .support-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #FFFFFF;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.9);
+      animation: pulseDot 2s infinite;
+    }
+    @keyframes pulseDot {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(1.3); }
+    }
+    .support-label {
+      font-size: 14px;
+      font-weight: 800;
+      color: #FFFFFF;
+      letter-spacing: 0.01em;
+    }
+
+    /* ==========================================================================
+       FOOTER (Spacious, multi-column, with giant typographic watermark)
+       ========================================================================== */
+    footer {
+      background: #FFFFFF;
+      border-top: 1px solid var(--border-subtle);
+      padding: 64px 0 24px;
+      font-size: 14px;
+      color: var(--color-text-muted);
+      width: 100%;
+      position: relative;
+      overflow: hidden;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 48px;
+      margin-bottom: 40px;
+      padding-bottom: 36px;
+      border-bottom: 1px solid var(--border-subtle);
+      position: relative;
+      z-index: 2;
+    }
+    .footer-brand h3 {
+      font-size: 22px;
+      font-weight: 900;
+      color: var(--color-text-main);
+      text-transform: uppercase;
+      margin-bottom: 10px;
+      letter-spacing: -0.02em;
+    }
+    .footer-col h4 {
+      font-size: 15px;
+      font-weight: 800;
+      color: var(--color-text-main);
+      margin-bottom: 16px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .footer-col ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .footer-col a {
+      color: var(--color-text-muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-col a:hover {
+      color: var(--color-primary);
+    }
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-size: 13px;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Giant Poster Watermark in Footer */
+    .footer-huge-watermark {
+      font-size: clamp(60px, 14vw, 200px);
+      font-weight: 900;
+      letter-spacing: -0.04em;
+      color: rgba(33, 33, 32, 0.038);
+      text-align: center;
+      text-transform: uppercase;
+      line-height: 0.82;
+      user-select: none;
+      pointer-events: none;
+      margin-top: 36px;
+      margin-bottom: -10px;
+      width: 100%;
+      font-family: var(--font-main);
+      white-space: nowrap;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ==========================================================================
+       RESPONSIVE
+       ========================================================================== */
+    @media (max-width: 1024px) {
+      .hero-banner { grid-template-columns: 1fr; padding-bottom: 0; }
+      .hero-image-col { margin-top: 16px; }
+      .stats-row { grid-template-columns: 1fr 1fr; }
+      .bento-col-8, .bento-col-4, .bento-col-6 { grid-column: span 12; }
+      .circle-hub-grid { grid-template-columns: 1fr; }
+      .hub-center-badge { display: none; }
+      .quadrant-tl, .quadrant-tr, .quadrant-bl, .quadrant-br { border-radius: var(--radius-card); }
+      .diplomas-grid { grid-template-columns: 1fr; }
+      .reviews-grid { grid-template-columns: 1fr; }
+      .cta-banner { grid-template-columns: 1fr; gap: 36px; }
+      .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+      .nav-list { display: none; }
+    }
+    @media (max-width: 640px) {
+      .hero-title { font-size: 30px; }
+      .hero-wizard { flex-direction: column; }
+      .wizard-btn { width: 100%; text-align: center; }
+      .stats-row { grid-template-columns: 1fr; text-align: center; }
+      .stats-arrow { margin: 8px auto; }
+      .cta-banner { padding: 32px 20px; }
+      .btn-phone-header { display: none; }
+      .footer-huge-watermark { font-size: 52px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Floating Header (Transparent on top, solid blur on scroll) -->
+  <header id="mainHeader">
+    <div class="container-fluid">
+      <div class="header-inner">
+        <a href="#" class="brand-logo">
+          REPETITOR<span class="dot-pro">.PRO</span>
+        </a>
+
+        <!-- Clean minimal navigation -->
+        <ul class="nav-list">
+          <li><a href="#subjects">Направления подготовки</a></li>
+          <li><a href="#pillars">Плюсы работы со мной</a></li>
+          <li><a href="#diplomas">Дипломы</a></li>
+          <li><a href="#reviews">Отзывы</a></li>
+        </ul>
+
+        <div class="header-right">
+          <a href="tel:+79991234567" class="btn-phone-header">
+            +7 (999) 123-45-67
+          </a>
+          <a href="#contact" class="btn-header-cta">
+            Записаться
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Banner (32px island with 3D mint graphics & cutout tutor) -->
+  <section class="hero-wrap">
+    <div class="container">
+      <div class="hero-banner">
+        
+        <!-- 3D-styled chart & graph backdrop on green shape -->
+        <svg class="hero-chart-backdrop" viewBox="0 0 600 500" fill="none">
+          <!-- 3D Glowing Ribbon / Torus shape -->
+          <path d="M 50 420 C 180 320, 260 180, 420 220 C 520 250, 560 380, 480 440 C 400 500, 280 460, 220 380" stroke="rgba(255,255,255,0.28)" stroke-width="32" stroke-linecap="round"/>
+          <path d="M 50 420 C 180 320, 260 180, 420 220 C 520 250, 560 380, 480 440 C 400 500, 280 460, 220 380" stroke="rgba(167, 243, 208, 0.45)" stroke-width="12" stroke-linecap="round"/>
+          <!-- Parabola Chart Grid -->
+          <line x1="80" y1="460" x2="480" y2="460" stroke="rgba(255,255,255,0.2)" stroke-width="2"/>
+          <line x1="140" y1="180" x2="140" y2="480" stroke="rgba(255,255,255,0.2)" stroke-width="2"/>
+          <path d="M 100 440 Q 220 200 380 440" stroke="rgba(255,255,255,0.6)" stroke-width="4" stroke-linecap="round" stroke-dasharray="8 6"/>
+          <!-- Soft radial glow behind tutor -->
+          <circle cx="340" cy="300" r="180" fill="url(#mintGlow)" opacity="0.35"/>
+          <defs>
+            <radialGradient id="mintGlow" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="#FFFFFF"/>
+              <stop offset="100%" stop-color="#1BAC72" stop-opacity="0"/>
+            </radialGradient>
+          </defs>
+        </svg>
+
+        <div class="hero-content">
+          <h1 class="hero-title">
+            Репетитор по математике и физике под ваши цели
+          </h1>
+
+          <!-- Search / Program Selector Box -->
+          <div class="hero-wizard">
+            <div class="wizard-icon-select">
+              <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+              <select class="wizard-select" id="heroSubjectSelect">
+                <option value="ege-math">Математика. Подготовка к профильному ЕГЭ (80+ баллов)</option>
+                <option value="oge-math">Математика. Подготовка к ОГЭ (на оценку «5»)</option>
+                <option value="phys-ege">Физика. Подготовка к ЕГЭ для технических вузов</option>
+                <option value="school">Школьная программа 5–8 классы (устранение пробелов)</option>
+                <option value="olymp">Олимпиадная физика и математика (МФТИ, ВШЭ)</option>
+              </select>
+            </div>
+            <a href="#contact" class="wizard-btn">Подобрать график</a>
+          </div>
+
+          <!-- Clickable Examples -->
+          <div class="hero-examples">
+            <span>Например,</span>
+            <span class="hero-pill-link" onclick="selectProgram('ege-math')">Математика. Профиль</span>
+            <span>или</span>
+            <span class="hero-pill-link" onclick="selectProgram('phys-ege')">Физика для поступления</span>
+          </div>
+        </div>
+
+        <!-- Cutout Character (Without rectangular card frame!) -->
+        <div class="hero-image-col">
+          <img class="tutor-cutout-img" src="assets/tutor_character.png" alt="Елена Александровна — Репетитор по математике и физике">
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Row ("Немного цифр обо мне" with hand-drawn arrow) -->
+  <div class="container stats-section">
+    <div class="stats-row">
+      <div class="stats-label-col">
+        Немного<br>цифр обо мне
+        <!-- Curved Doodle Arrow -->
+        <svg class="stats-arrow" viewBox="0 0 72 26" fill="none">
+          <path d="M 6 8 Q 36 25 64 15" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+          <polyline points="56,8 64,15 57,21" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+        </svg>
+      </div>
+
+      <div class="stat-box">
+        <div class="stat-number">15 лет +</div>
+        <div class="stat-desc">Опыта репетиторства и преподавания в физмат классах</div>
+      </div>
+
+      <div class="stat-box">
+        <div class="stat-number">240 +</div>
+        <div class="stat-desc">Довольных учеников, поступивших на бюджет в МГУ, МГТУ, ВШЭ</div>
+      </div>
+
+      <div class="stat-box">
+        <div class="stat-number">84.6</div>
+        <div class="stat-desc">Средний балл выпускников на профильном ЕГЭ 2024–2025</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bento Grid: НАПРАВЛЕНИЯ ПОДГОТОВКИ -->
+  <section class="container section-bento" id="subjects">
+    <div class="section-head-bento">
+      <div class="section-title-wrap">
+        <h2 class="section-h2-title">Направления подготовки</h2>
+        <span class="badge-pill-online">онлайн + офлайн</span>
+      </div>
+    </div>
+
+    <div class="bento-grid">
+      
+      <!-- Card 1 (Span 8 - Flagship EGE Math) -->
+      <a href="#contact" class="bento-card bento-col-8">
+        <div>
+          <div class="bento-card-title">
+            Математика. <span class="accent-green">Профиль 80+</span>
+          </div>
+          <p class="bento-card-text">
+            Глубокий разбор сложных заданий части 2 по строгим критериям проверки ФИПИ. Учимся нестандартному мышлению и уверенному набору максимальных первичных баллов.
+          </p>
+          <div class="topic-tags-row">
+            <span class="topic-tag">Параметры (№ 18)</span>
+            <span class="topic-tag">Планиметрия (№ 17)</span>
+            <span class="topic-tag">Стереометрия (№ 14)</span>
+            <span class="topic-tag">Теория чисел (№ 19)</span>
+          </div>
+        </div>
+        <div class="bento-card-footer">
+          <span class="bento-price">от 2 200 ₽ / 60 мин</span>
+          <span class="bento-action-arrow">Записаться ➔</span>
+        </div>
+      </a>
+
+      <!-- Card 2 (Span 4 - Physics EGE) -->
+      <a href="#contact" class="bento-card bento-col-4">
+        <div>
+          <div class="bento-card-title">
+            Физика. <span class="accent-blue">ЕГЭ для физмата</span>
+          </div>
+          <p class="bento-card-text">
+            Понимание физического смысла формул без механической зубрежки. Подготовка к поступлению на бюджет в Бауманку, МФТИ и МГУ.
+          </p>
+          <div class="topic-tags-row">
+            <span class="topic-tag">Механика</span>
+            <span class="topic-tag">Электродинамика</span>
+            <span class="topic-tag">Оптика</span>
+          </div>
+        </div>
+        <div class="bento-card-footer">
+          <span class="bento-price">от 2 200 ₽ / 60 мин</span>
+          <span class="bento-action-arrow">➔</span>
+        </div>
+      </a>
+
+      <!-- Card 3 (Span 4 - OGE 9th grade) -->
+      <a href="#contact" class="bento-card bento-col-4">
+        <div>
+          <div class="bento-card-title">
+            Математика. <span class="accent-red">ОГЭ 9 класс на «5»</span>
+          </div>
+          <p class="bento-card-text">
+            Отработка всех 25 прототипов ФИПИ. Спецкурс по сложной геометрии второй части (№ 23–25).
+          </p>
+          <div class="topic-tags-row">
+            <span class="topic-tag">Геометрия №23–25</span>
+            <span class="topic-tag">Графики функций</span>
+          </div>
+        </div>
+        <div class="bento-card-footer">
+          <span class="bento-price">от 1 800 ₽ / 60 мин</span>
+          <span class="bento-action-arrow">➔</span>
+        </div>
+      </a>
+
+      <!-- Card 4 (Span 4 - School Grades 5-8) -->
+      <a href="#contact" class="bento-card bento-col-4">
+        <div>
+          <div class="bento-card-title">
+            Школьная база. <span class="accent-amber">5–8 классы</span>
+          </div>
+          <p class="bento-card-text">
+            Ликвидация накопленных пробелов, понятное объяснение трудных тем, уверенные оценки «4» и «5» за 1–2 месяца.
+          </p>
+          <div class="topic-tags-row">
+            <span class="topic-tag">Дроби и уравнения</span>
+            <span class="topic-tag">Подготовка к ВПР</span>
+          </div>
+        </div>
+        <div class="bento-card-footer">
+          <span class="bento-price">от 1 500 ₽ / 60 мин</span>
+          <span class="bento-action-arrow">➔</span>
+        </div>
+      </a>
+
+      <!-- Card 5 (Span 4 - Complex math + physics) -->
+      <a href="#contact" class="bento-card bento-col-4">
+        <div>
+          <div class="bento-card-title">
+            Комплекс. <span class="accent-purple">Мат + Физ (-15%)</span>
+          </div>
+          <p class="bento-card-text">
+            Единый куратор по двум главным техническим предметам. Согласованное расписание и экономия семейного бюджета.
+          </p>
+          <div class="topic-tags-row">
+            <span class="topic-tag">Единый трекер</span>
+            <span class="topic-tag">Скидка на пакет</span>
+          </div>
+        </div>
+        <div class="bento-card-footer">
+          <span class="bento-price">Пакетный тариф</span>
+          <span class="bento-action-arrow">➔</span>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- ПЛЮСЫ РАБОТЫ СО МНОЙ (4-Quadrant Rounded Super-Circle Hub) -->
+  <section class="container section-pillars" id="pillars">
+    <div class="pillars-head">
+      <h2 class="pillars-h2">ПЛЮСЫ РАБОТЫ СО МНОЙ</h2>
+      <p class="pillars-sub">Почему родители и ученики выбирают системные занятия со мной вместо безликих онлайн-школ</p>
+    </div>
+
+    <div class="circle-hub-wrap">
+      
+      <!-- Central Floating Badge -->
+      <div class="hub-center-badge">
+        <span class="center-num">15</span>
+        <span class="center-text">ЛЕТ ОПЫТА</span>
+      </div>
+
+      <div class="circle-hub-grid">
+        
+        <!-- Quadrant 1: Top-Left -->
+        <div class="hub-quadrant quadrant-tl">
+          <div class="hub-quadrant-header">
+            <div class="hub-icon-wrap">
+              <svg width="26" height="26" fill="currentColor" viewBox="0 0 24 24"><path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z"/></svg>
+            </div>
+            <span class="hub-step-num">01</span>
+          </div>
+          <h3 class="hub-quadrant-title">Диплом МПГУ с отличием</h3>
+          <p class="hub-quadrant-desc">
+            Высшее профильное педагогическое образование. Не студент и не случайный преподаватель, а дипломированный учитель физики и математики.
+          </p>
+        </div>
+
+        <!-- Quadrant 2: Top-Right -->
+        <div class="hub-quadrant quadrant-tr">
+          <div class="hub-quadrant-header">
+            <div class="hub-icon-wrap">
+              <svg width="26" height="26" fill="currentColor" viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+            </div>
+            <span class="hub-step-num">02</span>
+          </div>
+          <h3 class="hub-quadrant-title">Эксперт комиссии ФИПИ</h3>
+          <p class="hub-quadrant-desc">
+            Действующий сертификат эксперта по проверке развёрнутых ответов 2-й части ЕГЭ. Знаю все нюансы критериев и ловушек оценивания.
+          </p>
+        </div>
+
+        <!-- Quadrant 3: Bottom-Left -->
+        <div class="hub-quadrant quadrant-bl">
+          <div class="hub-quadrant-header">
+            <div class="hub-icon-wrap">
+              <svg width="26" height="26" fill="currentColor" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"/></svg>
+            </div>
+            <span class="hub-step-num">03</span>
+          </div>
+          <h3 class="hub-quadrant-title">Вводная консультация 0 ₽</h3>
+          <p class="hub-quadrant-desc">
+            Бесплатное вводное 30-минутное занятие. Находим точечные пробелы, определяем психологический темп и формируем индивидуальный маршрут.
+          </p>
+        </div>
+
+        <!-- Quadrant 4: Bottom-Right -->
+        <div class="hub-quadrant quadrant-br">
+          <div class="hub-quadrant-header">
+            <div class="hub-icon-wrap">
+              <svg width="26" height="26" fill="currentColor" viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 9h12v2H6V9zm8 5H6v-2h8v2zm4-6H6V6h12v2z"/></svg>
+            </div>
+            <span class="hub-step-num">04</span>
+          </div>
+          <h3 class="hub-quadrant-title">Отчётность и чат 24/7</h3>
+          <p class="hub-quadrant-desc">
+            Родители получают регулярные отчёты с динамикой пробников. Ученик имеет доступ к разбору трудных домашних заданий в Telegram без задержек.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ДИПЛОМЫ И КВАЛИФИКАЦИЯ (Full-width edge-to-edge #1BAC72 green section + 3D graphics) -->
+  <section class="section-diplomas-full" id="diplomas">
+    
+    <!-- 3D Math Geometry Background Layer -->
+    <svg class="diplomas-3d-backdrop" viewBox="0 0 1400 600" fill="none" preserveAspectRatio="none">
+      <!-- Trigonometric wave / Sine wave in 3D stroke -->
+      <path d="M -50 360 C 220 140, 440 560, 720 340 C 1000 120, 1220 540, 1450 320" stroke="rgba(255,255,255,0.22)" stroke-width="26" stroke-linecap="round"/>
+      <path d="M -50 360 C 220 140, 440 560, 720 340 C 1000 120, 1220 540, 1450 320" stroke="rgba(167, 243, 208, 0.45)" stroke-width="8" stroke-linecap="round"/>
+      <!-- Orbital Geometrical Rings -->
+      <ellipse cx="260" cy="220" rx="220" ry="85" stroke="rgba(255,255,255,0.18)" stroke-width="3" transform="rotate(-15 260 220)"/>
+      <ellipse cx="1180" cy="380" rx="260" ry="95" stroke="rgba(255,255,255,0.18)" stroke-width="3" transform="rotate(18 1180 380)"/>
+      <!-- Grid axes and coordinate ticks -->
+      <line x1="80" y1="120" x2="1320" y2="120" stroke="rgba(255,255,255,0.08)" stroke-dasharray="10 6"/>
+      <line x1="80" y1="480" x2="1320" y2="480" stroke="rgba(255,255,255,0.08)" stroke-dasharray="10 6"/>
+      <circle cx="260" cy="220" r="140" fill="url(#whiteGlowDip)" opacity="0.15"/>
+      <circle cx="1180" cy="380" r="160" fill="url(#whiteGlowDip)" opacity="0.15"/>
+      <defs>
+        <radialGradient id="whiteGlowDip" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#FFFFFF"/>
+          <stop offset="100%" stop-color="#1BAC72" stop-opacity="0"/>
+        </radialGradient>
+      </defs>
+    </svg>
+
+    <div class="container">
+      
+      <div class="diplomas-head">
+        <h2 class="diplomas-h2">ДИПЛОМЫ И КВАЛИФИКАЦИЯ</h2>
+        <p class="diplomas-sub">Подтвержденное государственное высшее образование и сертификация эксперта предметной комиссии</p>
+      </div>
+
+      <div class="diplomas-grid">
+        
+        <!-- Diploma 1 -->
+        <div class="diploma-card" onclick="openLightbox('assets/diploma_1.jpg', 'Диплом о высшем педагогическом образовании (МПГУ)', 'Специальность: Учитель физики и математики, диплом с отличием')">
+          <div class="diploma-thumb-box">
+            <img src="assets/diploma_1.jpg" alt="Диплом МПГУ">
+            <div class="diploma-zoom-pill">🔍 Увеличить</div>
+          </div>
+          <div class="diploma-body">
+            <div class="diploma-title">Диплом о высшем образовании</div>
+            <div class="diploma-desc">МПГУ • Физико-математический факультет (с отличием)</div>
+          </div>
+        </div>
+
+        <!-- Diploma 2 -->
+        <div class="diploma-card" onclick="openLightbox('assets/diploma_2.jpg', 'Удостоверение эксперта ЕГЭ (ФИПИ)', 'Эксперт проверки заданий части 2 профильного уровня')">
+          <div class="diploma-thumb-box">
+            <img src="assets/diploma_2.jpg" alt="Удостоверение эксперта ФИПИ">
+            <div class="diploma-zoom-pill">🔍 Увеличить</div>
+          </div>
+          <div class="diploma-body">
+            <div class="diploma-title">Эксперт комиссии ЕГЭ</div>
+            <div class="diploma-desc">ФИПИ • Проверка части 2 профильного уровня</div>
+          </div>
+        </div>
+
+        <!-- Diploma 3 -->
+        <div class="diploma-card" onclick="openLightbox('assets/diploma_3.jpg', 'Сертификат МФТИ по олимпиадной подготовке', 'Современные методики решения задач олимпиадного уровня')">
+          <div class="diploma-thumb-box">
+            <img src="assets/diploma_3.jpg" alt="Сертификат МФТИ">
+            <div class="diploma-zoom-pill">🔍 Увеличить</div>
+          </div>
+          <div class="diploma-body">
+            <div class="diploma-title">Олимпиадная подготовка</div>
+            <div class="diploma-desc">МФТИ • Повышение квалификации преподавателей</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Lightbox Modal -->
+  <div class="lightbox-modal" id="lightboxModal" onclick="closeLightbox()">
+    <div class="lightbox-dialog" onclick="event.stopPropagation()">
+      <button class="lightbox-close-btn" onclick="closeLightbox()">✕</button>
+      <div class="lightbox-image-box">
+        <img id="lightboxImg" src="" alt="Документ">
+      </div>
+      <div class="lightbox-footer-info">
+        <div>
+          <div id="lightboxTitle" style="font-size: 17px; font-weight: 800; color: var(--color-text-main);"></div>
+          <div id="lightboxMeta" style="font-size: 14px; color: var(--color-text-muted);"></div>
+        </div>
+        <button class="btn-header-cta" onclick="closeLightbox()" style="padding: 10px 22px; font-size: 14px;">Закрыть</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ОТЗЫВЫ УЧЕНИКОВ И РОДИТЕЛЕЙ (with External Platform Badges) -->
+  <section class="container section-reviews" id="reviews">
+    <div class="reviews-head">
+      <h2 class="reviews-h2">ОТЗЫВЫ УЧЕНИКОВ И РОДИТЕЛЕЙ</h2>
+      <p class="reviews-sub">Реальные отзывы с независимых образовательных площадок и агрегаторов репетиторов</p>
+    </div>
+
+    <div class="reviews-grid">
+      
+      <!-- Review 1 -->
+      <div class="review-item">
+        <div>
+          <a href="https://profi.ru" target="_blank" class="review-platform-badge">
+            ⭐️ 5.0 на Профи.ру ↗
+          </a>
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">
+            «Сын занимался 10 и 11 класс по профильной математике и физике. Занимались онлайн через Zoom и доску Miro. Результат превзошел все ожидания: 88 по физике и 84 по математике! Поступили на бюджет в МГТУ им. Баумана. Огромная родительская благодарность за спокойствие и методику!»
+          </p>
+        </div>
+        <div class="review-author-wrap">
+          <div class="author-circle">ОС</div>
+          <div>
+            <div class="author-name">Ольга Сергеевна</div>
+            <div class="author-meta">Мама Артёма • МГТУ им. Баумана</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Review 2 -->
+      <div class="review-item">
+        <div>
+          <a href="https://repetitor.ru" target="_blank" class="review-platform-badge">
+            ⭐️ 5.0 на Repetitor.ru ↗
+          </a>
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">
+            «До девятого класса геометрию не понимала вообще, была слабая тройка. Елена Александровна с первого занятия смогла убрать страх перед чертежами. В итоге ОГЭ сдала на 31 балл из 31 (твёрдая «5»)! Сейчас продолжаем готовиться уже к 11 классу. Лучший учитель!»
+          </p>
+        </div>
+        <div class="review-author-wrap">
+          <div class="author-circle">ДА</div>
+          <div>
+            <div class="author-name">Дарья А.</div>
+            <div class="author-meta">Ученица 10 класса • ОГЭ на максимальный балл</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Review 3 -->
+      <div class="review-item">
+        <div>
+          <a href="https://yandex.ru/uslugi" target="_blank" class="review-platform-badge">
+            ⭐️ 5.0 на Яндекс.Услугах ↗
+          </a>
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">
+            «Очень понравилась системность. Никаких лишних разговоров, четкие домашние задания, регулярные срезы знаний. Как родитель, я каждый месяц понимал, за что плачу деньги и какой у дочери прогресс. Итог: 92 балла по математике и поступление в ВШЭ!»
+          </p>
+        </div>
+        <div class="review-author-wrap">
+          <div class="author-circle">МВ</div>
+          <div>
+            <div class="author-name">Михаил Владимирович</div>
+            <div class="author-meta">Папа Полины • НИУ ВШЭ (бюджет)</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ЗАПИСАТЬСЯ НА БЕСПЛАТНУЮ КОНСУЛЬТАЦИЮ (Booking CTA) -->
+  <section class="container section-booking" id="contact">
+    <div class="cta-banner">
+      <div class="cta-text-col">
+        <h2>ЗАПИШИТЕСЬ НА БЕСПЛАТНУЮ КОНСУЛЬТАЦИЮ</h2>
+        <p>
+          Познакомимся, определим уровень подготовки, выявим пробелы и составим пошаговый план выхода на желаемый балл. Консультация длится 30 минут и ни к чему вас не обязывает.
+        </p>
+
+        <div class="cta-contacts-list">
+          <div>📞 Телефон: <a href="tel:+79991234567">+7 (999) 123-45-67</a></div>
+          <div>💬 Telegram: <a href="https://t.me/username" target="_blank">@elena_repetitor</a></div>
+          <div>💬 WhatsApp: <a href="https://wa.me/79991234567" target="_blank">+7 (999) 123-45-67</a></div>
+        </div>
+      </div>
+
+      <form class="form-col" onsubmit="event.preventDefault(); alert('Спасибо! Заявка на консультацию принята. Елена Александровна свяжется с вами в течение 15 минут.'); this.reset();">
+        <input type="text" class="form-input-field" placeholder="Ваше имя" required>
+        <input type="tel" class="form-input-field" id="bookingPhone" placeholder="+7 (___) ___-__-__" required>
+        <select class="form-select-field">
+          <option>Математика (ЕГЭ 10–11 класс)</option>
+          <option>Физика (ЕГЭ 10–11 класс)</option>
+          <option>Математика (ОГЭ 9 класс)</option>
+          <option>Физика (ОГЭ 9 класс)</option>
+          <option>Школьная программа 5–8 классы</option>
+          <option>Олимпиадная подготовка</option>
+        </select>
+        <button type="submit" class="btn-submit-booking">Записаться на бесплатную консультацию</button>
+        <div class="form-disclaimer">
+          Нажимая кнопку, вы соглашаетесь с условиями обработки персональных данных в соответствии с 152-ФЗ.
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- Floating Vibrant Green WhatsApp Pill (Bright, Pulsing, High Impact) -->
+  <a href="https://wa.me/79991234567" target="_blank" class="floating-support-pill">
+    <div class="support-dot"></div>
+    <span class="support-label">Задать вопрос в WhatsApp</span>
+  </a>
+
+  <!-- FOOTER (Spacious, multi-column, with giant typographic watermark) -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>REPETITOR<span class="dot-pro">.PRO</span></h3>
+          <p style="max-width: 420px; line-height: 1.6;">
+            Официальный сайт репетитора по математике и физике Елены Александровны Морозовой. Индивидуальные занятия и подготовка к ЕГЭ/ОГЭ в Москве и онлайн.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Навигация</h4>
+          <ul>
+            <li><a href="#subjects">Направления подготовки</a></li>
+            <li><a href="#pillars">Плюсы работы со мной</a></li>
+            <li><a href="#diplomas">Дипломы и сертификаты</a></li>
+            <li><a href="#reviews">Отзывы учеников</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Контакты</h4>
+          <ul>
+            <li><a href="tel:+79991234567">+7 (999) 123-45-67</a></li>
+            <li><a href="https://t.me/username" target="_blank">Telegram: @elena_repetitor</a></li>
+            <li><a href="https://wa.me/79991234567" target="_blank">WhatsApp: +7 (999) 123-45-67</a></li>
+            <li><a href="#contact">Форма онлайн-записи</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 2026 Елена Александровна Морозова. Все права защищены.</div>
+        <div>Официальная педагогическая деятельность • Защита персональных данных 152-ФЗ</div>
+      </div>
+    </div>
+
+    <!-- Giant Poster Typography Watermark across footer -->
+    <div class="footer-huge-watermark">
+      REPETITOR.PRO
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    // Header floating scroll state
+    const headerEl = document.getElementById('mainHeader');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 30) {
+        headerEl.classList.add('is-scrolled');
+      } else {
+        headerEl.classList.remove('is-scrolled');
+      }
+    });
+
+    function selectProgram(val) {
+      document.getElementById('heroSubjectSelect').value = val;
+      document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // Phone mask
+    const phoneInput = document.getElementById('bookingPhone');
+    phoneInput.addEventListener('input', function(e) {
+      let val = e.target.value.replace(/\D/g, '');
+      if (val.startsWith('7') || val.startsWith('8')) val = val.substring(1);
+      let formatted = '+7 ';
+      if (val.length > 0) formatted += '(' + val.substring(0, 3);
+      if (val.length >= 3) formatted += ') ' + val.substring(3, 6);
+      if (val.length >= 6) formatted += '-' + val.substring(6, 8);
+      if (val.length >= 8) formatted += '-' + val.substring(8, 10);
+      e.target.value = formatted.trim();
+    });
+
+    // Lightbox modal for diplomas
+    function openLightbox(src, title, meta) {
+      document.getElementById('lightboxImg').src = src;
+      document.getElementById('lightboxTitle').textContent = title;
+      document.getElementById('lightboxMeta').textContent = meta;
+      document.getElementById('lightboxModal').classList.add('is-active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      document.getElementById('lightboxModal').classList.remove('is-active');
+      document.body.style.overflow = 'auto';
+    }
+
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') closeLightbox();
+    });
+  </script>
+</body>
+</html>

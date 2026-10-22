@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Елена Александровна — Репетиторские услуги для вашего успеха | Математика и Физика</title>
+  <meta name="description" content="Индивидуальные программы и профессиональный репетитор по математике и физике. 15+ лет опыта, 97% успешных поступлений. Онлайн и офлайн.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23635BFF'/><text x='50' y='68' font-size='50' font-family='sans-serif' font-weight='800' fill='white' text-anchor='middle'>ЕА</text></svg>">
+  <style>
+    :root {
+      --bg: #FDFDFE;
+      --bg-alt: #F7F7FD;
+      --primary: #635BFF;
+      --primary-dark: #4E45E4;
+      --primary-light: #EBEAFF;
+      --accent-gold: #F59E0B;
+      --text-heading: #141124;
+      --text-body: #4A4660;
+      --text-muted: #7E7A96;
+      --border: rgba(99, 91, 255, 0.12);
+      --radius-sm: 10px;
+      --radius-md: 20px;
+      --radius-lg: 32px;
+      --font-heading: 'Montserrat', system-ui, sans-serif;
+      --font-body: 'Inter', system-ui, sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--text-body);
+      font-family: var(--font-body);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Top Utility Bar (Exact signature from mos-399111) */
+    .top-bar {
+      background: #FFFFFF;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+      padding: 10px 0;
+      font-size: 13px;
+    }
+    .top-bar-wrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .top-socials {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .top-social-icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--primary-light);
+      color: var(--primary);
+      display: grid;
+      place-items: center;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 700;
+      transition: all 0.2s;
+    }
+    .top-social-icon:hover {
+      background: var(--primary);
+      color: #fff;
+    }
+    .top-contacts {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      color: var(--text-heading);
+      font-weight: 600;
+    }
+    .top-contacts a {
+      color: inherit;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .top-contacts a:hover {
+      color: var(--primary);
+    }
+
+    /* Nav Header */
+    header {
+      background: #FFFFFF;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 20px rgba(0, 0, 0, 0.04);
+    }
+    .nav-wrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 84px;
+    }
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+      color: var(--text-heading);
+    }
+    .logo-circle {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #635BFF 0%, #A855F7 100%);
+      color: #fff;
+      display: grid;
+      place-items: center;
+      font-family: var(--font-heading);
+      font-size: 18px;
+      font-weight: 900;
+      box-shadow: 0 8px 18px rgba(99, 91, 255, 0.28);
+    }
+    .brand-title {
+      font-family: var(--font-heading);
+      font-size: 17px;
+      font-weight: 800;
+      letter-spacing: -0.01em;
+    }
+    .brand-sub {
+      font-size: 12px;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text-heading);
+      font-weight: 600;
+      font-size: 15px;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+
+    .btn-gradient {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: linear-gradient(135deg, #635BFF 0%, #7E45F5 100%);
+      color: #FFFFFF;
+      font-family: var(--font-body);
+      font-weight: 700;
+      font-size: 15px;
+      padding: 14px 28px;
+      border-radius: 100px;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 8px 24px rgba(99, 91, 255, 0.32);
+      transition: all 0.25s;
+    }
+    .btn-gradient:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 32px rgba(99, 91, 255, 0.45);
+    }
+
+    /* Hero Section (mos-399111 inspired) */
+    .hero-section {
+      padding: 56px 0 72px;
+      position: relative;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      align-items: center;
+      gap: 56px;
+    }
+
+    .hero-badge-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: #FFFFFF;
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--primary);
+      padding: 8px 18px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--text-heading);
+      box-shadow: 0 4px 14px rgba(0,0,0,0.03);
+      margin-bottom: 24px;
+    }
+
+    .hero-heading {
+      font-family: var(--font-heading);
+      font-size: 46px;
+      font-weight: 900;
+      line-height: 1.12;
+      color: var(--text-heading);
+      letter-spacing: -0.02em;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+    }
+    .hero-heading span.purple {
+      color: var(--primary);
+    }
+
+    .hero-sub {
+      font-size: 17px;
+      color: var(--text-body);
+      line-height: 1.6;
+      margin-bottom: 36px;
+      max-width: 540px;
+    }
+
+    /* Ghost Watermark Numbers behind stats (Signature from mos-399111) */
+    .hero-stats-wrap {
+      display: flex;
+      align-items: center;
+      gap: 48px;
+      margin-top: 40px;
+      padding-top: 32px;
+      border-top: 1px solid rgba(0,0,0,0.06);
+    }
+    .ghost-stat {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+    }
+    .ghost-num {
+      position: absolute;
+      top: -38px;
+      left: -10px;
+      font-family: var(--font-heading);
+      font-size: 78px;
+      font-weight: 900;
+      color: rgba(99, 91, 255, 0.08);
+      z-index: 1;
+      pointer-events: none;
+      line-height: 1;
+    }
+    .real-stat-label {
+      position: relative;
+      z-index: 2;
+      font-size: 16px;
+      font-weight: 800;
+      color: var(--text-heading);
+    }
+    .real-stat-sub {
+      position: relative;
+      z-index: 2;
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    /* Right Hero Visual with Abstract Lavender Blobs and Cutout */
+    .hero-art-col {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .art-blob-1 {
+      position: absolute;
+      width: 420px;
+      height: 440px;
+      background: linear-gradient(135deg, #EBEAFF 0%, #DDD9FF 100%);
+      border-radius: 54% 46% 70% 30% / 48% 58% 42% 52%;
+      z-index: 1;
+    }
+    /* Diagonal hatch lines pattern in background */
+    .hatch-pattern {
+      position: absolute;
+      width: 220px;
+      height: 220px;
+      top: -20px;
+      right: -20px;
+      background-image: repeating-linear-gradient(45deg, var(--primary) 0, var(--primary) 2px, transparent 0, transparent 10px);
+      opacity: 0.18;
+      border-radius: 50%;
+      z-index: 1;
+    }
+    .hero-img-box {
+      position: relative;
+      z-index: 2;
+      width: 360px;
+      height: 480px;
+      border-radius: 32px;
+      overflow: hidden;
+      border: 8px solid #FFFFFF;
+      box-shadow: 0 24px 60px rgba(99, 91, 255, 0.16);
+      background: #FFFFFF;
+    }
+    .hero-img-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* Section Headers */
+    .section-header {
+      text-align: center;
+      max-width: 680px;
+      margin: 0 auto 52px;
+    }
+    .badge-label {
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--primary);
+      background: var(--primary-light);
+      padding: 6px 16px;
+      border-radius: 100px;
+      display: inline-block;
+      margin-bottom: 12px;
+    }
+    .section-title {
+      font-family: var(--font-heading);
+      font-size: 36px;
+      font-weight: 800;
+      color: var(--text-heading);
+      margin-bottom: 14px;
+      letter-spacing: -0.02em;
+    }
+    .section-desc {
+      font-size: 16px;
+      color: var(--text-muted);
+    }
+
+    /* Core Pillars (mos-399111 style) */
+    .pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-bottom: 80px;
+    }
+    .pillar-card {
+      background: #FFFFFF;
+      border-radius: var(--radius-md);
+      padding: 36px 30px;
+      border: 1px solid rgba(0, 0, 0, 0.06);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.03);
+      transition: all 0.3s;
+    }
+    .pillar-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 36px rgba(99, 91, 255, 0.12);
+      border-color: var(--primary-light);
+    }
+    .pillar-icon {
+      width: 54px;
+      height: 54px;
+      border-radius: 16px;
+      background: var(--primary-light);
+      color: var(--primary);
+      display: grid;
+      place-items: center;
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+    .pillar-card h3 {
+      font-family: var(--font-heading);
+      font-size: 19px;
+      font-weight: 800;
+      color: var(--text-heading);
+      margin-bottom: 10px;
+    }
+    .pillar-card p {
+      font-size: 14px;
+      color: var(--text-body);
+      line-height: 1.6;
+    }
+
+    /* Subject Switcher & Service Cards */
+    .services-section {
+      background: var(--bg-alt);
+      padding: 72px 0;
+      margin-bottom: 80px;
+    }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .service-card {
+      background: #FFFFFF;
+      border-radius: var(--radius-md);
+      padding: 36px 30px;
+      border: 1px solid rgba(0, 0, 0, 0.05);
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.02);
+      transition: all 0.3s;
+    }
+    .service-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 32px rgba(0, 0, 0, 0.06);
+    }
+    .service-tag {
+      font-size: 12px;
+      font-weight: 800;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 10px;
+    }
+    .service-title {
+      font-family: var(--font-heading);
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--text-heading);
+      margin-bottom: 12px;
+    }
+    .service-price {
+      font-family: var(--font-heading);
+      font-size: 28px;
+      font-weight: 800;
+      color: var(--text-heading);
+      margin-bottom: 20px;
+    }
+    .service-price span {
+      font-size: 14px;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+    .service-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 28px;
+      flex-grow: 1;
+    }
+    .service-list li {
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--text-body);
+    }
+    .service-list li::before {
+      content: '✓';
+      color: var(--primary);
+      font-weight: 900;
+    }
+
+    /* Diplomas Section (Lightbox with Blur redaction) */
+    .diplomas-wrap {
+      margin-bottom: 80px;
+    }
+    .redaction-note {
+      background: var(--primary-light);
+      border-radius: 12px;
+      padding: 14px 20px;
+      font-size: 13px;
+      color: var(--primary-dark);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 32px;
+      font-weight: 600;
+    }
+    .diplomas-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .diploma-card {
+      background: #FFFFFF;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    .diploma-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.08);
+      border-color: var(--primary);
+    }
+    .diploma-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      display: block;
+    }
+    .diploma-info {
+      padding: 20px;
+    }
+    .diploma-info h4 {
+      font-family: var(--font-heading);
+      font-size: 16px;
+      font-weight: 800;
+      color: var(--text-heading);
+      margin-bottom: 4px;
+    }
+    .diploma-info p {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    /* Lightbox Modal */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(20, 17, 36, 0.85);
+      backdrop-filter: blur(8px);
+      z-index: 1000;
+      display: none;
+      place-items: center;
+      padding: 24px;
+    }
+    .modal-backdrop.active { display: grid; }
+    .modal-box {
+      background: #FFFFFF;
+      border-radius: var(--radius-md);
+      max-width: 820px;
+      width: 100%;
+      overflow: hidden;
+      position: relative;
+    }
+    .modal-close-btn {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      width: 38px;
+      height: 38px;
+      background: #FFFFFF;
+      border: 1px solid rgba(0,0,0,0.1);
+      border-radius: 50%;
+      font-size: 18px;
+      cursor: pointer;
+      display: grid;
+      place-items: center;
+    }
+    .modal-box img {
+      width: 100%;
+      max-height: 520px;
+      object-fit: contain;
+      background: #F3F4F6;
+      display: block;
+    }
+    .modal-footer {
+      padding: 20px 28px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    /* Consultation Form (mos-399111 style) */
+    .form-card {
+      background: #FFFFFF;
+      border-radius: var(--radius-lg);
+      padding: 56px 48px;
+      box-shadow: 0 16px 48px rgba(99, 91, 255, 0.08);
+      border: 1px solid var(--border);
+      margin-bottom: 60px;
+    }
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 56px;
+      align-items: center;
+    }
+    .form-fields {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .form-control {
+      width: 100%;
+      padding: 14px 18px;
+      border-radius: 12px;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      font-family: var(--font-body);
+      font-size: 15px;
+      outline: none;
+      transition: all 0.2s;
+    }
+    .form-control:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px var(--primary-light);
+    }
+
+    /* Floating Quick Consultation Button */
+    .floating-consult {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: #FFFFFF;
+      border-radius: 100px;
+      padding: 10px 18px 10px 14px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+      border: 1px solid rgba(0,0,0,0.06);
+      z-index: 99;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    .floating-consult-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: #fff;
+      display: grid;
+      place-items: center;
+      font-size: 16px;
+    }
+
+    /* Footer */
+    footer {
+      background: #FFFFFF;
+      border-top: 1px solid rgba(0, 0, 0, 0.06);
+      padding: 40px 0;
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+    .footer-wrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    @media (max-width: 1024px) {
+      .hero-grid { grid-template-columns: 1fr; text-align: center; }
+      .hero-sub { margin: 0 auto 36px; }
+      .hero-stats-wrap { justify-content: center; }
+      .pillars-grid { grid-template-columns: 1fr; }
+      .services-grid { grid-template-columns: 1fr; }
+      .diplomas-grid { grid-template-columns: 1fr; }
+      .form-grid { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+    }
+    @media (max-width: 640px) {
+      .hero-heading { font-size: 32px; }
+      .hero-img-box { width: 290px; height: 390px; }
+      .form-card { padding: 36px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top bar (Signature from mos-399111) -->
+  <div class="top-bar">
+    <div class="container">
+      <div class="top-bar-wrap">
+        <div class="top-socials">
+          <a href="https://t.me/username" target="_blank" class="top-social-icon" title="Telegram">✈</a>
+          <a href="https://wa.me/79991234567" target="_blank" class="top-social-icon" title="WhatsApp">💬</a>
+          <span style="font-size: 12px; color: var(--text-muted); margin-left: 6px;">Открыта запись на 2026/2027 уч. год</span>
+        </div>
+        <div class="top-contacts">
+          <span>г. Москва • Онлайн по РФ</span>
+          <a href="tel:+79991234567">📞 +7 (999) 123-45-67</a>
+          <a href="mailto:elena.repetitor@mail.ru">✉ mail@elena-tutor.ru</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <div class="nav-wrap">
+        <a href="#" class="brand-logo">
+          <div class="logo-circle">ЕА</div>
+          <div>
+            <div class="brand-title">Елена Александровна</div>
+            <div class="brand-sub">Репетиторские услуги для вашего успеха</div>
+          </div>
+        </a>
+
+        <ul class="nav-links">
+          <li><a href="#about">О преподавателе</a></li>
+          <li><a href="#services">Услуги и цены</a></li>
+          <li><a href="#diplomas">Дипломы и гарантии</a></li>
+          <li><a href="#contact">Контакты</a></li>
+        </ul>
+
+        <a href="#contact" class="btn-gradient">Заказать консультацию</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-text-col">
+          <div class="hero-badge-pill">
+            Воплощайте свои цели в реальность с профессиональным репетитором!
+          </div>
+
+          <h1 class="hero-heading">
+            Репетиторские услуги <br><span class="purple">для вашего успеха</span>
+          </h1>
+
+          <p class="hero-sub">
+            Индивидуальные образовательные программы по математике и физике. Помогаю раскрыть потенциал ученика, ликвидировать страх перед формулами и поступить в желаемый вуз.
+          </p>
+
+          <a href="#contact" class="btn-gradient" style="padding: 16px 36px; font-size: 16px;">
+            Заказать бесплатную консультацию ➜
+          </a>
+
+          <!-- Ghost Watermark Stats (Signature from mos-399111) -->
+          <div class="hero-stats-wrap">
+            <div class="ghost-stat">
+              <span class="ghost-num">18+</span>
+              <span class="real-stat-label">15+ лет опыта</span>
+              <span class="real-stat-sub">В преподавании точных наук</span>
+            </div>
+
+            <div class="ghost-stat">
+              <span class="ghost-num">97%</span>
+              <span class="real-stat-label">97% учеников</span>
+              <span class="real-stat-sub">Сдали ОГЭ и ЕГЭ на 4 и 5</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-art-col">
+          <div class="art-blob-1"></div>
+          <div class="hatch-pattern"></div>
+          <div class="hero-img-box">
+            <img src="assets/tutor_pro.jpg" alt="Елена Александровна">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Core Pillars -->
+  <section class="container" id="about">
+    <div class="section-header">
+      <span class="badge-label">Преимущества</span>
+      <h2 class="section-title">Почему родители доверяют мне обучение детей</h2>
+      <p class="section-desc">Качественное образование строится на дисциплине, поддержке и взаимном уважении.</p>
+    </div>
+
+    <div class="pillars-grid">
+      <div class="pillar-card">
+        <div class="pillar-icon">🎓</div>
+        <h3>Опытный преподаватель</h3>
+        <p>Высшее педагогическое образование МПГУ, действующий сертификат эксперта предметной комиссии ФИПИ. 15+ лет постоянной практики.</p>
+      </div>
+
+      <div class="pillar-card">
+        <div class="pillar-icon">📊</div>
+        <h3>Прозрачный результат</h3>
+        <p>Родители ежемесячно получают детальный отчёт: динамика пробников, посещаемость, выполненные домашние задания и прогноз баллов.</p>
+      </div>
+
+      <div class="pillar-card">
+        <div class="pillar-icon">🎯</div>
+        <h3>Индивидуальный подход</h3>
+        <p>Каждый ребёнок уникален. Мы определяем психотип и темп восприятия, подбирая понятные именно ему визуальные ассоциации.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services & Pricing -->
+  <section class="services-section" id="services">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge-label">Направления обучения</span>
+        <h2 class="section-title">Предлагаем услуги</h2>
+        <p class="section-desc">Доступны форматы индивидуальных занятий и обучения в мини-группах (до 3 человек).</p>
+      </div>
+
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-tag">5–8 классы</div>
+          <h3 class="service-title">Школьная математика</h3>
+          <div class="service-price">от 1 500 ₽ <span>/ 60 мин</span></div>
+          <ul class="service-list">
+            <li>Ликвидация пробелов в знаниях</li>
+            <li>Подготовка к ВПР и контрольным</li>
+            <li>Формирование устойчивой базы</li>
+            <li>Чат помощи с домашкой</li>
+          </ul>
+          <a href="#contact" class="btn-gradient" style="justify-content: center; width: 100%;">Заказать курс</a>
+        </div>
+
+        <div class="service-card" style="border: 2px solid var(--primary); transform: scale(1.02);">
+          <div class="service-tag">🔥 9 класс</div>
+          <h3 class="service-title">ОГЭ: Математика + Физика</h3>
+          <div class="service-price">от 1 800 ₽ <span>/ 60 мин</span></div>
+          <ul class="service-list">
+            <li>Отработка всех 25 заданий ОГЭ</li>
+            <li>Геометрический практикум части 2</li>
+            <li>Ежемесячный контрольный пробник</li>
+            <li>Выход на твёрдую «5»</li>
+          </ul>
+          <a href="#contact" class="btn-gradient" style="justify-content: center; width: 100%;">Заказать курс</a>
+        </div>
+
+        <div class="service-card">
+          <div class="service-tag">10–11 классы</div>
+          <h3 class="service-title">ЕГЭ Профильный уровень</h3>
+          <div class="service-price">от 2 200 ₽ <span>/ 60 мин</span></div>
+          <ul class="service-list">
+            <li>Параметры, геометрия и теория чисел</li>
+            <li>Критерии ФИПИ и оформление бланков</li>
+            <li>Психологическая уверенность</li>
+            <li>Поступление на бюджет</li>
+          </ul>
+          <a href="#contact" class="btn-gradient" style="justify-content: center; width: 100%;">Заказать курс</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Diplomas Section (Lightbox with Redaction) -->
+  <section class="container diplomas-wrap" id="diplomas">
+    <div class="section-header">
+      <span class="badge-label">Официально</span>
+      <h2 class="section-title">Дипломы и сертификаты</h2>
+      <p class="section-desc">Документы государственного образца, подтверждающие право ведения педагогической деятельности.</p>
+    </div>
+
+    <div class="redaction-note">
+      🔒 Внимание: персональные серии и номера документов заретушированы в целях конфиденциальности согласно 152-ФЗ.
+    </div>
+
+    <div class="diplomas-grid">
+      <div class="diploma-card" onclick="openCert('assets/diploma_1.jpg', 'Диплом МПГУ с отличием')">
+        <img src="assets/diploma_1.jpg" alt="Диплом">
+        <div class="diploma-info">
+          <h4>Высшее профильное образование</h4>
+          <p>МПГУ • Учитель физики и математики</p>
+        </div>
+      </div>
+
+      <div class="diploma-card" onclick="openCert('assets/diploma_2.jpg', 'Удостоверение эксперта ЕГЭ ФИПИ')">
+        <img src="assets/diploma_2.jpg" alt="Эксперт ЕГЭ">
+        <div class="diploma-info">
+          <h4>Эксперт комиссии ЕГЭ</h4>
+          <p>ФИПИ • Проверка части 2 профиля</p>
+        </div>
+      </div>
+
+      <div class="diploma-card" onclick="openCert('assets/diploma_3.jpg', 'Сертификат МФТИ')">
+        <img src="assets/diploma_3.jpg" alt="Сертификат МФТИ">
+        <div class="diploma-info">
+          <h4>Олимпиадная подготовка</h4>
+          <p>МФТИ • Олимпиадная физика</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lightbox Modal -->
+  <div class="modal-backdrop" id="modalBackdrop" onclick="closeCert()">
+    <div class="modal-box" onclick="event.stopPropagation()">
+      <button class="modal-close-btn" onclick="closeCert()">✕</button>
+      <img id="modalCertImg" src="" alt="Документ">
+      <div class="modal-footer">
+        <div id="modalCertCaption" style="font-weight: 700; color: var(--text-heading);"></div>
+        <button class="btn-gradient" onclick="closeCert()" style="padding: 8px 18px; font-size: 13px;">Закрыть</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Form Section -->
+  <section class="container" id="contact">
+    <div class="form-card">
+      <div class="form-grid">
+        <div>
+          <span class="badge-label">Запись открыта</span>
+          <h2 class="section-title" style="text-align: left; font-size: 32px;">Оставьте заявку на вводную консультацию</h2>
+          <p style="color: var(--text-muted); margin-bottom: 24px;">
+            Мы перезвоним вам в течение 15 минут, ответим на вопросы и согласуем удобное время для первой встречи.
+          </p>
+          <div style="font-size: 15px; font-weight: 600; display: flex; flex-direction: column; gap: 8px;">
+            <div>📞 Телефон: +7 (999) 123-45-67</div>
+            <div>💬 WhatsApp / Telegram: @elena_repetitor</div>
+          </div>
+        </div>
+
+        <form class="form-fields" onsubmit="event.preventDefault(); alert('Спасибо! Заявка принята. Свяжемся с вами в течение 15 минут.'); this.reset();">
+          <input type="text" class="form-control" placeholder="Ваше имя" required>
+          <input type="tel" class="form-control" placeholder="Телефон (+7 ...)" required>
+          <select class="form-control">
+            <option>Математика (ЕГЭ)</option>
+            <option>Физика (ЕГЭ)</option>
+            <option>ОГЭ (9 класс)</option>
+            <option>Школьная программа (5–8 классы)</option>
+          </select>
+          <button type="submit" class="btn-gradient" style="justify-content: center; width: 100%;">
+            Отправить заявку на консультацию
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Floating Consultation Bar -->
+  <a href="#contact" class="floating-consult">
+    <div class="floating-consult-icon">💬</div>
+    <div>
+      <div style="font-size: 13px; font-weight: 800; color: var(--text-heading);">Задать вопрос</div>
+      <div style="font-size: 11px; color: #10B981; font-weight: 700;">● он-лайн</div>
+    </div>
+  </a>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-wrap">
+        <div>© 2026 Елена Александровна Морозова • Репетиторские услуги</div>
+        <div>Политика конфиденциальности • Все права защищены</div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function openCert(src, title) {
+      document.getElementById('modalCertImg').src = src;
+      document.getElementById('modalCertCaption').textContent = title;
+      document.getElementById('modalBackdrop').classList.add('active');
+    }
+    function closeCert() {
+      document.getElementById('modalBackdrop').classList.remove('active');
+    }
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeCert(); });
+  </script>
+</body>
+</html>

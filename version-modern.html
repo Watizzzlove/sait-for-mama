@@ -1,0 +1,1727 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Репетитор по математике и физике — Елена Александровна</title>
+  <meta name="description" content="Репетитор по математике и физике Елена Александровна. 15 лет опыта. Подготовка к ОГЭ, ЕГЭ. Онлайн и офлайн занятия." />
+  <meta name="keywords" content="репетитор математика физика ЕГЭ ОГЭ онлайн" />
+  <meta property="og:title" content="Репетитор по математике и физике — Елена Александровна" />
+  <meta property="og:description" content="15 лет опыта, 200+ учеников, 98% поступают в вуз мечты." />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='%236C5CE7'/><stop offset='1' stop-color='%2300B894'/></linearGradient></defs><rect width='64' height='64' rx='16' fill='url(%23g)'/><text x='32' y='44' font-size='28' font-family='sans-serif' font-weight='bold' fill='white' text-anchor='middle'>ЕА</text></svg>" />
+
+  <style>
+    /* ===== RESET & BASE ===== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body {
+      font-family: 'Nunito', sans-serif;
+      background: #fff;
+      color: #2d2d2d;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    img { max-width: 100%; display: block; }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+
+    /* ===== CSS VARIABLES ===== */
+    :root {
+      --violet: #6C5CE7;
+      --violet-dark: #5849c2;
+      --violet-light: #8b7ff0;
+      --teal: #00B894;
+      --teal-dark: #009b7d;
+      --lavender: #F3F0FF;
+      --lavender-mid: #e8e2ff;
+      --gray-light: #f8f9fc;
+      --gray: #6b7280;
+      --dark: #1a1a2e;
+      --shadow-sm: 0 2px 12px rgba(108,92,231,.10);
+      --shadow-md: 0 6px 30px rgba(108,92,231,.16);
+      --shadow-lg: 0 12px 50px rgba(108,92,231,.22);
+      --radius-sm: 12px;
+      --radius-md: 20px;
+      --radius-lg: 32px;
+      --gradient: linear-gradient(135deg, var(--violet) 0%, var(--teal) 100%);
+      --gradient-soft: linear-gradient(135deg, #8b7ff0 0%, #00d4aa 100%);
+    }
+
+    /* ===== SCROLL ANIMATIONS ===== */
+    .reveal {
+      opacity: 0;
+      transform: translateY(36px);
+      transition: opacity .65s cubic-bezier(.4,0,.2,1), transform .65s cubic-bezier(.4,0,.2,1);
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-left  { opacity: 0; transform: translateX(-40px); transition: opacity .65s cubic-bezier(.4,0,.2,1), transform .65s cubic-bezier(.4,0,.2,1); }
+    .reveal-right { opacity: 0; transform: translateX(40px);  transition: opacity .65s cubic-bezier(.4,0,.2,1), transform .65s cubic-bezier(.4,0,.2,1); }
+    .reveal-left.visible, .reveal-right.visible { opacity: 1; transform: translateX(0); }
+    .delay-1 { transition-delay: .1s; }
+    .delay-2 { transition-delay: .2s; }
+    .delay-3 { transition-delay: .3s; }
+    .delay-4 { transition-delay: .4s; }
+
+    /* ===== NAV ===== */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      background: rgba(255,255,255,.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(108,92,231,.08);
+      transition: box-shadow .3s;
+    }
+    nav.scrolled { box-shadow: var(--shadow-md); }
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      font-size: 1.1rem;
+      color: var(--violet);
+    }
+    .nav-logo-icon {
+      width: 40px; height: 40px;
+      border-radius: 12px;
+      background: var(--gradient);
+      display: flex; align-items: center; justify-content: center;
+      color: #fff;
+      font-size: .85rem;
+      font-weight: 900;
+      flex-shrink: 0;
+    }
+    .nav-links {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+    .nav-links a {
+      padding: 6px 14px;
+      border-radius: 50px;
+      font-size: .9rem;
+      font-weight: 600;
+      color: var(--gray);
+      transition: background .2s, color .2s;
+    }
+    .nav-links a:hover { background: var(--lavender); color: var(--violet); }
+    .nav-cta {
+      background: var(--gradient) !important;
+      color: #fff !important;
+      padding: 8px 20px !important;
+      border-radius: 50px !important;
+      font-weight: 700 !important;
+      transition: opacity .2s, transform .2s !important;
+    }
+    .nav-cta:hover { opacity: .9; transform: translateY(-1px); }
+    .burger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 6px;
+      border-radius: 8px;
+      background: var(--lavender);
+      border: none;
+      outline: none;
+    }
+    .burger span {
+      display: block;
+      width: 22px; height: 2.5px;
+      background: var(--violet);
+      border-radius: 2px;
+      transition: transform .3s, opacity .3s;
+    }
+    .burger.open span:nth-child(1) { transform: rotate(45deg) translate(5px,5px); }
+    .burger.open span:nth-child(2) { opacity: 0; }
+    .burger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px,-5px); }
+    .mobile-nav {
+      display: none;
+      flex-direction: column;
+      gap: 4px;
+      padding: 12px 24px 20px;
+      background: rgba(255,255,255,.98);
+      border-top: 1px solid var(--lavender);
+    }
+    .mobile-nav.open { display: flex; }
+    .mobile-nav a {
+      padding: 10px 14px;
+      border-radius: 12px;
+      font-weight: 600;
+      color: var(--gray);
+      transition: background .2s, color .2s;
+    }
+    .mobile-nav a:hover { background: var(--lavender); color: var(--violet); }
+
+    /* ===== SECTION HELPERS ===== */
+    section { padding: 80px 24px; }
+    .container { max-width: 1100px; margin: 0 auto; }
+    .section-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--lavender);
+      color: var(--violet);
+      font-size: .8rem;
+      font-weight: 700;
+      padding: 5px 14px;
+      border-radius: 50px;
+      margin-bottom: 16px;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+    }
+    .section-title {
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 900;
+      color: var(--dark);
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+    .section-title span { 
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .section-sub {
+      font-size: 1.05rem;
+      color: var(--gray);
+      max-width: 560px;
+      margin-bottom: 56px;
+    }
+    .text-center { text-align: center; }
+    .text-center .section-sub { margin-left: auto; margin-right: auto; }
+
+    /* ===== BUTTONS ===== */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 32px;
+      border-radius: 50px;
+      font-family: 'Nunito', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      border: 2.5px solid transparent;
+      transition: transform .2s, box-shadow .2s, opacity .2s;
+      text-decoration: none;
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-primary {
+      background: var(--gradient);
+      color: #fff;
+      border-color: transparent;
+      box-shadow: 0 4px 20px rgba(108,92,231,.35);
+    }
+    .btn-primary:hover { box-shadow: 0 8px 30px rgba(108,92,231,.45); }
+    .btn-outline-white {
+      background: transparent;
+      color: #fff;
+      border-color: rgba(255,255,255,.7);
+    }
+    .btn-outline-white:hover { background: rgba(255,255,255,.12); }
+    .btn-white {
+      background: #fff;
+      color: var(--violet);
+      border-color: transparent;
+      box-shadow: 0 4px 20px rgba(0,0,0,.12);
+    }
+    .btn-white:hover { box-shadow: 0 8px 30px rgba(0,0,0,.18); }
+    .btn-outline-violet {
+      background: transparent;
+      color: var(--violet);
+      border-color: var(--violet);
+    }
+    .btn-outline-violet:hover { background: var(--lavender); }
+
+    /* ===== HERO ===== */
+    #hero {
+      min-height: 100vh;
+      background: var(--gradient);
+      display: flex;
+      align-items: center;
+      padding: 120px 24px 80px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-blobs {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+    }
+    .hero-blob {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(60px);
+      opacity: .25;
+    }
+    .hero-blob-1 { width: 500px; height: 500px; background: #fff; top: -150px; right: -150px; }
+    .hero-blob-2 { width: 350px; height: 350px; background: #00B894; bottom: -100px; left: 10%; }
+    .hero-blob-3 { width: 200px; height: 200px; background: var(--violet-light); top: 40%; left: -60px; }
+    .hero-content { position: relative; z-index: 1; max-width: 1100px; margin: 0 auto; width: 100%; }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,255,255,.18);
+      backdrop-filter: blur(8px);
+      color: #fff;
+      padding: 7px 18px;
+      border-radius: 50px;
+      font-size: .85rem;
+      font-weight: 700;
+      margin-bottom: 28px;
+      border: 1px solid rgba(255,255,255,.3);
+      letter-spacing: .02em;
+    }
+    .hero-badge .dot { width: 8px; height: 8px; background: #00ff99; border-radius: 50%; animation: pulse 2s infinite; }
+    @keyframes pulse { 0%,100% { opacity:1; transform:scale(1); } 50% { opacity:.5; transform:scale(1.4); } }
+    .hero-title {
+      font-size: clamp(2rem, 5.5vw, 4rem);
+      font-weight: 900;
+      color: #fff;
+      line-height: 1.15;
+      margin-bottom: 20px;
+      max-width: 820px;
+    }
+    .hero-sub {
+      font-size: clamp(1rem, 2vw, 1.25rem);
+      color: rgba(255,255,255,.88);
+      margin-bottom: 40px;
+      font-weight: 500;
+    }
+    .hero-btns { display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 64px; }
+    .hero-stats {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .hero-stat {
+      background: rgba(255,255,255,.14);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255,255,255,.25);
+      border-radius: var(--radius-md);
+      padding: 18px 26px;
+      color: #fff;
+      min-width: 140px;
+    }
+    .hero-stat-num {
+      font-size: 1.8rem;
+      font-weight: 900;
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .hero-stat-label { font-size: .8rem; opacity: .8; font-weight: 600; }
+    .hero-scroll {
+      position: absolute;
+      bottom: 32px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      color: rgba(255,255,255,.6);
+      font-size: .75rem;
+      font-weight: 600;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      animation: bounce 2.5s infinite;
+    }
+    .hero-scroll svg { opacity: .7; }
+    @keyframes bounce { 0%,100% { transform: translateX(-50%) translateY(0); } 50% { transform: translateX(-50%) translateY(8px); } }
+
+    /* ===== ABOUT ===== */
+    #about { background: var(--gray-light); }
+    .about-card {
+      background: #fff;
+      border-radius: var(--radius-lg);
+      padding: 48px;
+      box-shadow: var(--shadow-md);
+      position: relative;
+      overflow: hidden;
+    }
+    .about-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: var(--radius-lg);
+      padding: 2.5px;
+      background: var(--gradient);
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: destination-out;
+      mask-composite: exclude;
+      pointer-events: none;
+    }
+    .about-inner {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+    .about-avatar-wrap { text-align: center; }
+    .about-avatar {
+      width: 140px; height: 140px;
+      border-radius: 50%;
+      background: var(--gradient);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.2rem;
+      font-weight: 900;
+      color: #fff;
+      margin: 0 auto 16px;
+      box-shadow: 0 8px 30px rgba(108,92,231,.35);
+      position: relative;
+    }
+    .about-avatar::after {
+      content: '';
+      position: absolute;
+      inset: -5px;
+      border-radius: 50%;
+      border: 2px dashed rgba(108,92,231,.25);
+      animation: spin 12s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .about-badge-row {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      align-items: center;
+    }
+    .about-badge {
+      background: var(--lavender);
+      color: var(--violet);
+      font-size: .72rem;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 50px;
+      white-space: nowrap;
+    }
+    .about-text h2 { font-size: 1.9rem; font-weight: 900; color: var(--dark); margin-bottom: 14px; }
+    .about-text h2 span { background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .about-text p { font-size: 1.02rem; color: var(--gray); line-height: 1.75; margin-bottom: 20px; }
+    .about-features {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+    .about-feature {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: .9rem;
+      font-weight: 600;
+      color: var(--dark);
+    }
+    .about-feature-icon {
+      width: 32px; height: 32px;
+      border-radius: 10px;
+      background: var(--lavender);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+    .tags { display: flex; flex-wrap: wrap; gap: 8px; }
+    .tag {
+      background: var(--lavender);
+      color: var(--violet);
+      font-size: .82rem;
+      font-weight: 700;
+      padding: 6px 14px;
+      border-radius: 50px;
+      transition: background .2s, color .2s;
+    }
+    .tag:hover { background: var(--violet); color: #fff; }
+
+    /* ===== SERVICES ===== */
+    #services { background: #fff; }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 28px;
+    }
+    .service-card {
+      background: #fff;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid rgba(108,92,231,.08);
+      transition: transform .3s, box-shadow .3s;
+      position: relative;
+    }
+    .service-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
+    .service-card-top {
+      height: 7px;
+    }
+    .service-card:nth-child(1) .service-card-top { background: linear-gradient(90deg, #6C5CE7, #8b7ff0); }
+    .service-card:nth-child(2) .service-card-top { background: linear-gradient(90deg, #00B894, #00d4aa); }
+    .service-card:nth-child(3) .service-card-top { background: linear-gradient(90deg, #e17055, #fdcb6e); }
+    .service-card-body { padding: 28px 28px 32px; }
+    .service-icon {
+      width: 52px; height: 52px;
+      border-radius: 14px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.5rem;
+      margin-bottom: 18px;
+    }
+    .service-card:nth-child(1) .service-icon { background: #f0eeff; }
+    .service-card:nth-child(2) .service-icon { background: #e6faf5; }
+    .service-card:nth-child(3) .service-icon { background: #fff4ee; }
+    .service-card h3 { font-size: 1.2rem; font-weight: 800; color: var(--dark); margin-bottom: 10px; }
+    .service-card p { font-size: .9rem; color: var(--gray); margin-bottom: 20px; line-height: 1.6; }
+    .service-list { margin-bottom: 24px; }
+    .service-list li {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: .88rem;
+      color: #444;
+      font-weight: 500;
+      padding: 4px 0;
+    }
+    .service-list li::before {
+      content: '';
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    .service-card:nth-child(1) .service-list li::before { background: var(--violet); }
+    .service-card:nth-child(2) .service-list li::before { background: var(--teal); }
+    .service-card:nth-child(3) .service-list li::before { background: #e17055; }
+    .service-price {
+      display: flex;
+      align-items: baseline;
+      gap: 4px;
+      margin-bottom: 18px;
+    }
+    .price-num {
+      font-size: 2rem;
+      font-weight: 900;
+      color: var(--dark);
+    }
+    .price-unit { font-size: .85rem; color: var(--gray); font-weight: 600; }
+    .service-card:nth-child(1) .price-num { background: linear-gradient(135deg, #6C5CE7, #8b7ff0); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .service-card:nth-child(2) .price-num { background: linear-gradient(135deg, #00B894, #00d4aa); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .service-card:nth-child(3) .price-num { background: linear-gradient(135deg, #e17055, #fdcb6e); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .service-btn {
+      display: block;
+      text-align: center;
+      padding: 11px 20px;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: .9rem;
+      transition: opacity .2s, transform .2s;
+    }
+    .service-btn:hover { opacity: .85; transform: translateY(-1px); }
+    .service-card:nth-child(1) .service-btn { background: linear-gradient(135deg, #6C5CE7, #8b7ff0); color: #fff; box-shadow: 0 4px 16px rgba(108,92,231,.3); }
+    .service-card:nth-child(2) .service-btn { background: linear-gradient(135deg, #00B894, #00d4aa); color: #fff; box-shadow: 0 4px 16px rgba(0,184,148,.3); }
+    .service-card:nth-child(3) .service-btn { background: linear-gradient(135deg, #e17055, #fdcb6e); color: #fff; box-shadow: 0 4px 16px rgba(225,112,85,.3); }
+    .service-badge {
+      position: absolute;
+      top: 18px; right: 18px;
+      background: #fdcb6e;
+      color: #7d5700;
+      font-size: .7rem;
+      font-weight: 800;
+      padding: 4px 10px;
+      border-radius: 50px;
+      text-transform: uppercase;
+      letter-spacing: .05em;
+    }
+
+    /* ===== HOW IT WORKS ===== */
+    #how { background: var(--lavender); }
+    .timeline {
+      display: flex;
+      gap: 0;
+      position: relative;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      top: 52px;
+      left: calc(100% / 6);
+      right: calc(100% / 6);
+      height: 3px;
+      background: var(--gradient);
+      border-radius: 3px;
+      z-index: 0;
+    }
+    .timeline-step {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 0 16px;
+      position: relative;
+      z-index: 1;
+    }
+    .timeline-num {
+      width: 56px; height: 56px;
+      border-radius: 50%;
+      background: var(--gradient);
+      color: #fff;
+      font-size: 1.3rem;
+      font-weight: 900;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 24px;
+      box-shadow: 0 6px 20px rgba(108,92,231,.35);
+      position: relative;
+    }
+    .timeline-num::after {
+      content: '';
+      position: absolute;
+      inset: -5px;
+      border-radius: 50%;
+      background: rgba(108,92,231,.15);
+    }
+    .timeline-icon {
+      width: 72px; height: 72px;
+      border-radius: var(--radius-sm);
+      background: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      margin-bottom: 16px;
+      box-shadow: var(--shadow-sm);
+    }
+    .timeline-step h3 { font-size: 1.05rem; font-weight: 800; color: var(--dark); margin-bottom: 8px; }
+    .timeline-step p { font-size: .88rem; color: var(--gray); line-height: 1.55; }
+
+    /* ===== STATS ===== */
+    #stats {
+      background: var(--dark);
+      position: relative;
+      overflow: hidden;
+    }
+    #stats::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 20% 50%, rgba(108,92,231,.3) 0%, transparent 60%),
+                  radial-gradient(ellipse at 80% 50%, rgba(0,184,148,.2) 0%, transparent 60%);
+    }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 32px;
+      position: relative;
+      z-index: 1;
+    }
+    .stat-card {
+      text-align: center;
+      padding: 36px 24px;
+      border-radius: var(--radius-md);
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.1);
+      backdrop-filter: blur(4px);
+      transition: transform .3s, border-color .3s;
+    }
+    .stat-card:hover { transform: translateY(-4px); border-color: rgba(108,92,231,.5); }
+    .stat-emoji { font-size: 2.4rem; margin-bottom: 12px; }
+    .stat-num {
+      font-size: 3.2rem;
+      font-weight: 900;
+      line-height: 1;
+      margin-bottom: 8px;
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .stat-plus { font-size: 2rem; }
+    .stat-label { font-size: .95rem; color: rgba(255,255,255,.7); font-weight: 600; }
+
+    /* ===== REVIEWS ===== */
+    #reviews { background: var(--gray-light); }
+    .slider-wrap {
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--radius-lg);
+    }
+    .slider-track {
+      display: flex;
+      transition: transform .5s cubic-bezier(.4,0,.2,1);
+    }
+    .review-card {
+      min-width: 100%;
+      padding: 40px 48px;
+      background: #fff;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-md);
+    }
+    .review-stars { color: #fdcb6e; font-size: 1.2rem; margin-bottom: 16px; letter-spacing: 2px; }
+    .review-quote {
+      font-size: 3rem;
+      line-height: 1;
+      color: var(--lavender-mid);
+      font-weight: 900;
+      margin-bottom: -8px;
+    }
+    .review-text {
+      font-size: 1.05rem;
+      color: #444;
+      line-height: 1.75;
+      margin-bottom: 28px;
+      font-style: italic;
+    }
+    .review-author { display: flex; align-items: center; gap: 14px; }
+    .review-avatar {
+      width: 50px; height: 50px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 800;
+      color: #fff;
+      font-size: .9rem;
+      flex-shrink: 0;
+    }
+    .review-author-info { font-weight: 700; color: var(--dark); font-size: .95rem; }
+    .review-author-sub { font-size: .82rem; color: var(--gray); font-weight: 500; }
+    .slider-controls {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      margin-top: 32px;
+    }
+    .slider-btn {
+      width: 46px; height: 46px;
+      border-radius: 50%;
+      border: 2px solid var(--violet);
+      background: #fff;
+      color: var(--violet);
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer;
+      transition: background .2s, color .2s, transform .2s;
+      font-size: 1.1rem;
+    }
+    .slider-btn:hover { background: var(--violet); color: #fff; transform: scale(1.08); }
+    .slider-dots { display: flex; gap: 8px; align-items: center; }
+    .slider-dot {
+      width: 9px; height: 9px;
+      border-radius: 50%;
+      background: var(--lavender-mid);
+      cursor: pointer;
+      transition: background .2s, transform .2s;
+    }
+    .slider-dot.active { background: var(--violet); transform: scale(1.3); }
+
+    /* ===== DIPLOMAS ===== */
+    #diplomas { background: #fff; }
+    .diplomas-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 20px;
+    }
+    .diploma-card {
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      cursor: pointer;
+      background: var(--lavender);
+      position: relative;
+      aspect-ratio: 3/4;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      border: 2px solid transparent;
+      transition: border-color .25s, transform .25s, box-shadow .25s;
+    }
+    .diploma-card:hover { border-color: var(--violet); transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+    .diploma-icon { font-size: 3.5rem; }
+    .diploma-title { font-size: .9rem; font-weight: 800; color: var(--violet); text-align: center; padding: 0 16px; }
+    .diploma-year { font-size: .8rem; color: var(--gray); font-weight: 600; }
+    .diploma-zoom {
+      position: absolute;
+      top: 12px; right: 12px;
+      width: 34px; height: 34px;
+      background: rgba(255,255,255,.9);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: .9rem;
+      opacity: 0;
+      transition: opacity .25s;
+    }
+    .diploma-card:hover .diploma-zoom { opacity: 1; }
+
+    /* Lightbox */
+    .lightbox-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,.88);
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .3s;
+    }
+    .lightbox-overlay.open { opacity: 1; pointer-events: auto; }
+    .lightbox-box {
+      background: #fff;
+      border-radius: var(--radius-lg);
+      padding: 40px;
+      max-width: 520px;
+      width: 100%;
+      text-align: center;
+      position: relative;
+      transform: scale(.9);
+      transition: transform .3s;
+    }
+    .lightbox-overlay.open .lightbox-box { transform: scale(1); }
+    .lightbox-icon { font-size: 5rem; margin-bottom: 16px; }
+    .lightbox-title { font-size: 1.4rem; font-weight: 900; color: var(--dark); margin-bottom: 8px; }
+    .lightbox-sub { font-size: .95rem; color: var(--gray); margin-bottom: 6px; }
+    .lightbox-close {
+      position: absolute;
+      top: 16px; right: 16px;
+      width: 36px; height: 36px;
+      border-radius: 50%;
+      border: none;
+      background: var(--lavender);
+      color: var(--violet);
+      font-size: 1.1rem;
+      cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 900;
+      transition: background .2s;
+    }
+    .lightbox-close:hover { background: var(--lavender-mid); }
+
+    /* ===== FORM ===== */
+    #form-section { background: var(--lavender); }
+    .form-wrap {
+      max-width: 680px;
+      margin: 0 auto;
+      background: #fff;
+      border-radius: var(--radius-lg);
+      padding: 52px 48px;
+      box-shadow: var(--shadow-lg);
+    }
+    .form-title { font-size: 1.8rem; font-weight: 900; color: var(--dark); margin-bottom: 8px; }
+    .form-sub { font-size: .95rem; color: var(--gray); margin-bottom: 36px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .field { position: relative; margin-bottom: 20px; }
+    .field label {
+      position: absolute;
+      left: 18px;
+      top: 16px;
+      font-size: .95rem;
+      color: var(--gray);
+      font-weight: 600;
+      pointer-events: none;
+      transition: top .2s, font-size .2s, color .2s;
+      background: #fff;
+      padding: 0 4px;
+    }
+    .field input, .field select, .field textarea {
+      width: 100%;
+      padding: 16px 18px;
+      border: 2px solid #e8e8f0;
+      border-radius: var(--radius-sm);
+      font-family: 'Nunito', sans-serif;
+      font-size: .95rem;
+      color: var(--dark);
+      font-weight: 600;
+      outline: none;
+      background: #fff;
+      transition: border-color .2s, box-shadow .2s;
+      resize: none;
+    }
+    .field input:focus, .field select:focus, .field textarea:focus {
+      border-color: var(--violet);
+      box-shadow: 0 0 0 4px rgba(108,92,231,.1);
+    }
+    .field input:focus + label,
+    .field input:not(:placeholder-shown) + label,
+    .field select:focus + label,
+    .field select:not([value=""]) + label,
+    .field textarea:focus + label,
+    .field textarea:not(:placeholder-shown) + label {
+      top: -10px;
+      font-size: .78rem;
+      color: var(--violet);
+    }
+    .field input::placeholder, .field textarea::placeholder { color: transparent; }
+    .field textarea { height: 110px; }
+    .field select option[value=""] { color: var(--gray); }
+    .form-submit {
+      width: 100%;
+      padding: 17px;
+      font-size: 1.05rem;
+      margin-top: 8px;
+    }
+    .form-note { text-align: center; font-size: .8rem; color: var(--gray); margin-top: 14px; }
+    .form-success {
+      display: none;
+      text-align: center;
+      padding: 32px 0;
+    }
+    .form-success-icon { font-size: 4rem; margin-bottom: 12px; }
+    .form-success h3 { font-size: 1.5rem; font-weight: 900; color: var(--dark); margin-bottom: 8px; }
+    .form-success p { color: var(--gray); }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: var(--gradient);
+      color: #fff;
+      padding: 60px 24px 32px;
+      position: relative;
+      overflow: hidden;
+    }
+    footer::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 80% 20%, rgba(255,255,255,.1) 0%, transparent 50%);
+    }
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr;
+      gap: 48px;
+      margin-bottom: 48px;
+    }
+    .footer-brand h3 {
+      font-size: 1.4rem;
+      font-weight: 900;
+      margin-bottom: 12px;
+      color: #fff;
+    }
+    .footer-brand p {
+      font-size: .9rem;
+      color: rgba(255,255,255,.75);
+      line-height: 1.65;
+      margin-bottom: 20px;
+    }
+    .footer-social { display: flex; gap: 10px; }
+    .social-btn {
+      width: 40px; height: 40px;
+      border-radius: 12px;
+      background: rgba(255,255,255,.15);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem;
+      transition: background .2s, transform .2s;
+      color: #fff;
+    }
+    .social-btn:hover { background: rgba(255,255,255,.3); transform: translateY(-2px); }
+    .footer-col h4 {
+      font-size: 1rem;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 16px;
+      letter-spacing: .02em;
+    }
+    .footer-links { display: flex; flex-direction: column; gap: 8px; }
+    .footer-links a {
+      color: rgba(255,255,255,.75);
+      font-size: .9rem;
+      font-weight: 500;
+      transition: color .2s;
+    }
+    .footer-links a:hover { color: #fff; }
+    .footer-contact-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+    .footer-contact-icon {
+      width: 34px; height: 34px;
+      border-radius: 10px;
+      background: rgba(255,255,255,.15);
+      display: flex; align-items: center; justify-content: center;
+      font-size: .9rem;
+      flex-shrink: 0;
+    }
+    .footer-contact-text { font-size: .88rem; color: rgba(255,255,255,.85); font-weight: 500; }
+    .footer-contact-text a { color: inherit; font-weight: 600; }
+    .footer-contact-text a:hover { color: #fff; text-decoration: underline; }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,.15);
+      padding-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .footer-bottom p { font-size: .82rem; color: rgba(255,255,255,.6); }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 900px) {
+      .nav-links { display: none; }
+      .burger { display: flex; }
+      .about-inner { grid-template-columns: 1fr; gap: 28px; }
+      .about-avatar-wrap { display: flex; align-items: center; gap: 24px; flex-direction: row; }
+      .about-badge-row { flex-direction: row; flex-wrap: wrap; justify-content: flex-start; }
+      .about-avatar { margin: 0; }
+      .about-features { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+      .footer-brand { grid-column: 1 / -1; }
+    }
+    @media (max-width: 700px) {
+      section { padding: 60px 20px; }
+      .timeline {
+        flex-direction: column;
+        gap: 32px;
+      }
+      .timeline::before { display: none; }
+      .timeline-step { flex-direction: row; text-align: left; gap: 20px; padding: 0; }
+      .timeline-num { margin-bottom: 0; flex-shrink: 0; }
+      .timeline-text { flex: 1; }
+      .review-card { padding: 28px 24px; }
+      .form-row { grid-template-columns: 1fr; }
+      .form-wrap { padding: 32px 24px; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+      .about-avatar-wrap { flex-direction: column; text-align: center; }
+      .about-badge-row { justify-content: center; }
+    }
+    @media (max-width: 480px) {
+      .hero-stats { flex-direction: column; }
+      .hero-stat { min-width: unset; }
+      .diplomas-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    /* ===== MISC ===== */
+    .wave-top {
+      display: block;
+      width: 100%;
+      overflow: hidden;
+      line-height: 0;
+      transform: rotate(180deg);
+    }
+    .wave-top svg { display: block; }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a class="nav-logo" href="#hero">
+      <div class="nav-logo-icon">ЕА</div>
+      <span>Елена Александровна</span>
+    </a>
+    <div class="nav-links">
+      <a href="#about">О репетиторе</a>
+      <a href="#services">Услуги</a>
+      <a href="#how">Как работаем</a>
+      <a href="#reviews">Отзывы</a>
+      <a href="#diplomas">Дипломы</a>
+      <a href="#form-section" class="nav-cta">Записаться</a>
+    </div>
+    <button class="burger" id="burger" aria-label="Меню">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="mobile-nav" id="mobileNav">
+    <a href="#about">О репетиторе</a>
+    <a href="#services">Услуги и цены</a>
+    <a href="#how">Как проходят занятия</a>
+    <a href="#reviews">Отзывы</a>
+    <a href="#diplomas">Дипломы</a>
+    <a href="#form-section" style="color:var(--violet);font-weight:800;">✨ Записаться</a>
+  </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<section id="hero">
+  <div class="hero-blobs">
+    <div class="hero-blob hero-blob-1"></div>
+    <div class="hero-blob hero-blob-2"></div>
+    <div class="hero-blob hero-blob-3"></div>
+  </div>
+  <div class="hero-content">
+    <div class="hero-badge">
+      <span class="dot"></span>
+      Принимаю учеников — онлайн и офлайн
+    </div>
+    <h1 class="hero-title">Математика и физика — понятно и результативно</h1>
+    <p class="hero-sub">Репетитор Елена Александровна&nbsp;•&nbsp;15 лет опыта&nbsp;•&nbsp;ОГЭ &amp; ЕГЭ</p>
+    <div class="hero-btns">
+      <a href="#form-section" class="btn btn-white">📝 Записаться</a>
+      <a href="#services" class="btn btn-outline-white">Узнать стоимость</a>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="hero-stat-num">200+</div>
+        <div class="hero-stat-label">учеников за всё время</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">15</div>
+        <div class="hero-stat-label">лет преподавания</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">98%</div>
+        <div class="hero-stat-label">сдают экзамен успешно</div>
+      </div>
+    </div>
+  </div>
+  <a href="#about" class="hero-scroll" aria-label="Прокрутить вниз">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+  </a>
+</section>
+
+<!-- ===== ABOUT ===== -->
+<section id="about">
+  <div class="container">
+    <div class="about-card reveal">
+      <div class="about-inner">
+        <div class="about-avatar-wrap reveal-left">
+          <div class="about-avatar">ЕА</div>
+          <div class="about-badge-row">
+            <span class="about-badge">🎓 Педагог</span>
+            <span class="about-badge">✅ Онлайн</span>
+            <span class="about-badge">📍 Офлайн</span>
+          </div>
+        </div>
+        <div class="about-text reveal-right delay-1">
+          <div class="section-tag">👩‍🏫 О репетиторе</div>
+          <h2>Привет! Я&nbsp;<span>Елена Александровна</span></h2>
+          <p>Педагог с 15-летним стажем, выпускница физико-математического факультета. Работаю со школьниками с 5 по 11 класс — помогаю разобраться с темами, которые кажутся сложными, убираю пробелы и выстраиваю уверенное понимание предмета.</p>
+          <p>Мой подход: сначала понять, потом решать. Никакой зубрёжки — только живые объяснения, примеры из реальной жизни и грамотная система повторения. Мои ученики не просто сдают экзамены — они начинают любить математику и физику.</p>
+          <div class="about-features">
+            <div class="about-feature">
+              <div class="about-feature-icon">🎯</div>
+              Индивидуальный план
+            </div>
+            <div class="about-feature">
+              <div class="about-feature-icon">📊</div>
+              Разбор ошибок
+            </div>
+            <div class="about-feature">
+              <div class="about-feature-icon">💬</div>
+              Поддержка 24/7
+            </div>
+            <div class="about-feature">
+              <div class="about-feature-icon">🚀</div>
+              Быстрый результат
+            </div>
+          </div>
+          <div class="tags">
+            <span class="tag">#ЕГЭ</span>
+            <span class="tag">#ОГЭ</span>
+            <span class="tag">#Математика</span>
+            <span class="tag">#Физика</span>
+            <span class="tag">#ОнлайнОбучение</span>
+            <span class="tag">#ШкольнаяПрограмма</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SERVICES ===== -->
+<section id="services">
+  <div class="container">
+    <div class="text-center">
+      <div class="section-tag">💎 Услуги</div>
+      <h2 class="section-title">Что и <span>сколько стоит</span></h2>
+      <p class="section-sub">Выберите подходящий формат занятий. Первый пробный урок — бесплатно!</p>
+    </div>
+    <div class="services-grid">
+
+      <div class="service-card reveal delay-1">
+        <div class="service-card-top"></div>
+        <div class="service-card-body">
+          <div class="service-icon">📚</div>
+          <h3>Школьная программа</h3>
+          <p>Разбираем текущий материал, закрываем пробелы, выравниваем знания по предмету — 5–11 класс.</p>
+          <ul class="service-list">
+            <li>Математика (алгебра + геометрия)</li>
+            <li>Физика 7–11 класс</li>
+            <li>Домашние задания</li>
+            <li>Подготовка к контрольным</li>
+          </ul>
+          <div class="service-price">
+            <span class="price-num">1 200</span>
+            <span class="price-unit">₽ / 60 мин</span>
+          </div>
+          <a href="#form-section" class="service-btn">Записаться</a>
+        </div>
+      </div>
+
+      <div class="service-card reveal delay-2">
+        <div class="service-card-top"></div>
+        <div class="service-card-body">
+          <div class="service-icon">🎯</div>
+          <h3>Подготовка к ОГЭ</h3>
+          <p>Системная подготовка к ОГЭ по математике или физике. Разбираем все типы заданий экзамена.</p>
+          <ul class="service-list">
+            <li>Структура и формат ОГЭ</li>
+            <li>Тренировка по вариантам</li>
+            <li>Работа над ошибками</li>
+            <li>Психологическая готовность</li>
+          </ul>
+          <div class="service-price">
+            <span class="price-num">1 500</span>
+            <span class="price-unit">₽ / 60 мин</span>
+          </div>
+          <a href="#form-section" class="service-btn">Записаться</a>
+        </div>
+      </div>
+
+      <div class="service-card reveal delay-3">
+        <div class="service-card-top"></div>
+        <div class="service-card-body">
+          <div class="service-badge">🔥 ТОП</div>
+          <div class="service-icon">🏆</div>
+          <h3>Подготовка к ЕГЭ</h3>
+          <p>Интенсивная подготовка к ЕГЭ по профильной математике или физике для поступления в вуз.</p>
+          <ul class="service-list">
+            <li>Профиль и база математики</li>
+            <li>Физика на 80+ баллов</li>
+            <li>Разбор части C/сложных задач</li>
+            <li>Пробные ЕГЭ + анализ</li>
+          </ul>
+          <div class="service-price">
+            <span class="price-num">1 800</span>
+            <span class="price-unit">₽ / 60 мин</span>
+          </div>
+          <a href="#form-section" class="service-btn">Записаться</a>
+        </div>
+      </div>
+
+    </div>
+    <div style="text-align:center;margin-top:32px;">
+      <p style="color:var(--gray);font-size:.95rem;">📌 При записи на 4+ занятия в месяц — скидка 10% &nbsp;|&nbsp; 🎁 Первый пробный урок бесплатно</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== HOW IT WORKS ===== -->
+<section id="how">
+  <div class="container">
+    <div class="text-center">
+      <div class="section-tag">🗓️ Процесс</div>
+      <h2 class="section-title">Как проходят <span>занятия</span></h2>
+      <p class="section-sub">Всё просто и удобно — от записи до результата</p>
+    </div>
+    <div class="timeline">
+      <div class="timeline-step reveal delay-1">
+        <div class="timeline-num">1</div>
+        <div class="timeline-icon">💬</div>
+        <div class="timeline-text">
+          <h3>Бесплатная консультация</h3>
+          <p>Обсуждаем цели, текущий уровень и составляем персональный план занятий</p>
+        </div>
+      </div>
+      <div class="timeline-step reveal delay-2">
+        <div class="timeline-num">2</div>
+        <div class="timeline-icon">📖</div>
+        <div class="timeline-text">
+          <h3>Занятие онлайн или вживую</h3>
+          <p>Интерактивный урок: объяснение → практика → разбор ошибок в комфортном темпе</p>
+        </div>
+      </div>
+      <div class="timeline-step reveal delay-3">
+        <div class="timeline-num">3</div>
+        <div class="timeline-icon">🚀</div>
+        <div class="timeline-text">
+          <h3>Домашнее задание и рост</h3>
+          <p>После каждого урока — ДЗ и доступ к материалам. Прогресс отслеживаем вместе</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== STATS ===== -->
+<section id="stats">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-card reveal delay-1">
+        <div class="stat-emoji">🎓</div>
+        <div class="stat-num"><span class="counter" data-target="200">0</span><span class="stat-plus">+</span></div>
+        <div class="stat-label">учеников обучено</div>
+      </div>
+      <div class="stat-card reveal delay-2">
+        <div class="stat-emoji">📅</div>
+        <div class="stat-num"><span class="counter" data-target="15">0</span></div>
+        <div class="stat-label">лет опыта</div>
+      </div>
+      <div class="stat-card reveal delay-3">
+        <div class="stat-emoji">🏆</div>
+        <div class="stat-num"><span class="counter" data-target="98">0</span>%</div>
+        <div class="stat-label">сдают экзамен успешно</div>
+      </div>
+      <div class="stat-card reveal delay-4">
+        <div class="stat-emoji">⭐</div>
+        <div class="stat-num"><span class="counter" data-target="5">0</span>.0</div>
+        <div class="stat-label">средняя оценка учеников</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== REVIEWS ===== -->
+<section id="reviews">
+  <div class="container">
+    <div class="text-center">
+      <div class="section-tag">⭐ Отзывы</div>
+      <h2 class="section-title">Что говорят <span>ученики</span></h2>
+      <p class="section-sub">Реальные слова реальных людей — ничего лишнего</p>
+    </div>
+    <div class="slider-wrap reveal">
+      <div class="slider-track" id="sliderTrack">
+
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <div class="review-quote">"</div>
+          <p class="review-text">До занятий с Еленой Александровной я вообще не понимала физику — казалось, это что-то невозможное. После 4 месяцев интенсивной подготовки я сдала ЕГЭ на 79 баллов! Она объясняет так, что всё буквально «встаёт на место». Очень благодарна!</p>
+          <div class="review-author">
+            <div class="review-avatar" style="background:linear-gradient(135deg,#6C5CE7,#a29bfe);">АМ</div>
+            <div>
+              <div class="review-author-info">Алина М.</div>
+              <div class="review-author-sub">ЕГЭ по физике — 79 баллов, 2024</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <div class="review-quote">"</div>
+          <p class="review-text">Мой сын занимался у Елены Александровны весь 9 класс. Из твёрдой тройки по математике вырос до уверенной четвёрки, а ОГЭ сдал на 4! Педагог умеет найти подход к подростку, не давит, но и не даёт расслабляться. Рекомендую от всей души.</p>
+          <div class="review-author">
+            <div class="review-avatar" style="background:linear-gradient(135deg,#00B894,#00cec9);">НК</div>
+            <div>
+              <div class="review-author-info">Наталья К., мама</div>
+              <div class="review-author-sub">ОГЭ по математике — 4, 2024</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <div class="review-quote">"</div>
+          <p class="review-text">Занимаюсь онлайн уже второй год. Елена Александровна всегда на связи, всегда отвечает на вопросы в мессенджере. Подготовка к ЕГЭ по профильной математике идёт очень системно. Уже сейчас чувствую себя готовым к экзамену. Советую всем!</p>
+          <div class="review-author">
+            <div class="review-avatar" style="background:linear-gradient(135deg,#e17055,#fdcb6e);">ДС</div>
+            <div>
+              <div class="review-author-info">Дмитрий С.</div>
+              <div class="review-author-sub">Подготовка к ЕГЭ по профмату, 2025</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div class="slider-controls">
+      <button class="slider-btn" id="sliderPrev" aria-label="Назад">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+      </button>
+      <div class="slider-dots" id="sliderDots"></div>
+      <button class="slider-btn" id="sliderNext" aria-label="Вперёд">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ===== DIPLOMAS ===== -->
+<section id="diplomas">
+  <div class="container">
+    <div class="text-center">
+      <div class="section-tag">🏅 Документы</div>
+      <h2 class="section-title">Дипломы и <span>сертификаты</span></h2>
+      <p class="section-sub">Профессиональная квалификация, подтверждённая документально</p>
+    </div>
+    <div class="diplomas-grid">
+
+      <div class="diploma-card reveal delay-1" data-title="Диплом о высшем образовании" data-desc="Физико-математический факультет" data-year="2009" data-icon="🎓">
+        <div class="diploma-icon">🎓</div>
+        <div class="diploma-title">Диплом о высшем образовании</div>
+        <div class="diploma-year">2009</div>
+        <div class="diploma-zoom">🔍</div>
+      </div>
+
+      <div class="diploma-card reveal delay-2" data-title="Сертификат методиста" data-desc="Современные методы преподавания математики" data-year="2018" data-icon="📜">
+        <div class="diploma-icon">📜</div>
+        <div class="diploma-title">Сертификат методиста</div>
+        <div class="diploma-year">2018</div>
+        <div class="diploma-zoom">🔍</div>
+      </div>
+
+      <div class="diploma-card reveal delay-3" data-title="Повышение квалификации" data-desc="Подготовка к ЕГЭ нового формата" data-year="2022" data-icon="📋">
+        <div class="diploma-icon">📋</div>
+        <div class="diploma-title">Повышение квалификации</div>
+        <div class="diploma-year">2022</div>
+        <div class="diploma-zoom">🔍</div>
+      </div>
+
+      <div class="diploma-card reveal delay-1" data-title="Онлайн-педагогика" data-desc="Эффективное обучение в дистанционном формате" data-year="2020" data-icon="💻">
+        <div class="diploma-icon">💻</div>
+        <div class="diploma-title">Онлайн-педагогика</div>
+        <div class="diploma-year">2020</div>
+        <div class="diploma-zoom">🔍</div>
+      </div>
+
+      <div class="diploma-card reveal delay-2" data-title="Грамота Министерства" data-desc="За вклад в развитие образования" data-year="2021" data-icon="🏅">
+        <div class="diploma-icon">🏅</div>
+        <div class="diploma-title">Грамота Министерства</div>
+        <div class="diploma-year">2021</div>
+        <div class="diploma-zoom">🔍</div>
+      </div>
+
+      <div class="diploma-card reveal delay-3" data-title="Сертификат ЕГЭ-эксперта" data-desc="Проверка экзаменационных работ" data-year="2023" data-icon="✅">
+        <div class="diploma-icon">✅</div>
+        <div class="diploma-title">Сертификат ЕГЭ-эксперта</div>
+        <div class="diploma-year">2023</div>
+        <div class="diploma-zoom">🔍</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Lightbox -->
+<div class="lightbox-overlay" id="lightbox" role="dialog" aria-modal="true">
+  <div class="lightbox-box">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Закрыть">✕</button>
+    <div class="lightbox-icon" id="lbIcon"></div>
+    <div class="lightbox-title" id="lbTitle"></div>
+    <div class="lightbox-sub" id="lbDesc"></div>
+    <div class="lightbox-sub" id="lbYear" style="color:var(--violet);font-weight:700;font-size:.9rem;margin-top:4px;"></div>
+    <div style="margin-top:20px;">
+      <span style="display:inline-flex;align-items:center;gap:6px;background:var(--lavender);color:var(--violet);padding:6px 16px;border-radius:50px;font-size:.82rem;font-weight:700;">✅ Документ подлинный</span>
+    </div>
+  </div>
+</div>
+
+<!-- ===== FORM ===== -->
+<section id="form-section">
+  <div class="container">
+    <div class="form-wrap reveal">
+      <div id="formContent">
+        <div class="section-tag" style="margin-bottom:10px;">✍️ Запись</div>
+        <div class="form-title">Записаться на занятие</div>
+        <p class="form-sub">Заполните форму — я свяжусь с вами в течение часа и мы подберём удобное время</p>
+        <form id="contactForm" novalidate>
+          <div class="form-row">
+            <div class="field">
+              <input type="text" id="fname" name="name" placeholder="Ваше имя" required autocomplete="given-name" />
+              <label for="fname">Ваше имя</label>
+            </div>
+            <div class="field">
+              <input type="tel" id="fphone" name="phone" placeholder="Телефон" required autocomplete="tel" />
+              <label for="fphone">Телефон / Telegram</label>
+            </div>
+          </div>
+          <div class="field">
+            <select id="fsubject" name="subject" required>
+              <option value="">Выберите предмет</option>
+              <option value="math-school">Математика (школьная программа)</option>
+              <option value="physics-school">Физика (школьная программа)</option>
+              <option value="math-oge">Подготовка к ОГЭ (математика)</option>
+              <option value="physics-oge">Подготовка к ОГЭ (физика)</option>
+              <option value="math-ege">Подготовка к ЕГЭ (математика)</option>
+              <option value="physics-ege">Подготовка к ЕГЭ (физика)</option>
+            </select>
+            <label for="fsubject">Предмет и цель</label>
+          </div>
+          <div class="field">
+            <select id="fformat" name="format" required>
+              <option value="">Выберите формат</option>
+              <option value="online">Онлайн</option>
+              <option value="offline">Офлайн (Москва)</option>
+            </select>
+            <label for="fformat">Формат занятий</label>
+          </div>
+          <div class="field">
+            <textarea id="fmessage" name="message" placeholder="Комментарий (необязательно)"></textarea>
+            <label for="fmessage">Комментарий (необязательно)</label>
+          </div>
+          <button type="submit" class="btn btn-primary form-submit">🚀 Отправить заявку</button>
+          <p class="form-note">🔒 Ваши данные не передаются третьим лицам. Отвечу в течение 1 часа в рабочее время.</p>
+        </form>
+      </div>
+      <div class="form-success" id="formSuccess">
+        <div class="form-success-icon">🎉</div>
+        <h3>Заявка отправлена!</h3>
+        <p>Елена Александровна свяжется с вами в течение часа. Спасибо за доверие!</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h3>🎓 Елена Александровна</h3>
+        <p>Репетитор по математике и физике с 15-летним опытом. Помогаю школьникам разобраться в сложных темах и уверенно сдать экзамены.</p>
+        <div class="footer-social">
+          <a class="social-btn" href="https://t.me/elena_rep_math" aria-label="Telegram">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.248l-2.05 9.66c-.15.673-.544.836-1.102.52l-3.046-2.244-1.47 1.415c-.163.163-.3.3-.614.3l.218-3.09 5.624-5.08c.245-.218-.053-.339-.38-.121L6.94 14.44l-2.97-.927c-.646-.2-.658-.647.136-.96l11.578-4.465c.537-.194 1.008.131.878.16z"/></svg>
+          </a>
+          <a class="social-btn" href="https://vk.com/elena_rep_math" aria-label="ВКонтакте">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M15.684 0H8.316C1.592 0 0 1.592 0 8.316v7.368C0 22.408 1.592 24 8.316 24h7.368C22.408 24 24 22.408 24 15.684V8.316C24 1.592 22.408 0 15.684 0zm3.692 17.123h-1.744c-.66 0-.862-.525-2.049-1.714-1.032-1.003-1.49-.897-1.49.521v1.195c0 .41-.131.658-1.218.658-1.79 0-3.776-1.084-5.169-3.109C5.55 11.677 5 9.43 5 8.9c0-.286.103-.554.553-.554h1.744c.41 0 .565.188.724.626.8 2.306 2.14 4.326 2.69 4.326.206 0 .298-.094.298-.608V10.74c-.063-1.09-.638-1.183-.638-1.572 0-.236.193-.473.504-.473h2.742c.347 0 .472.188.472.595v3.211c0 .346.158.472.256.472.206 0 .378-.126.756-.504 1.172-1.31 2.006-3.328 2.006-3.328.11-.236.3-.455.71-.455h1.744c.525 0 .638.27.525.604-.22.978-2.356 4.038-2.356 4.038-.188.3-.252.44 0 .78.188.251.8.77 1.208 1.239.756.862 1.336 1.587 1.491 2.09.163.504-.098.766-.607.766z"/></svg>
+          </a>
+          <a class="social-btn" href="https://instagram.com/elena_rep_math" aria-label="Instagram">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Навигация</h4>
+        <div class="footer-links">
+          <a href="#about">О репетиторе</a>
+          <a href="#services">Услуги и цены</a>
+          <a href="#how">Как работаем</a>
+          <a href="#reviews">Отзывы</a>
+          <a href="#diplomas">Дипломы</a>
+          <a href="#form-section">Записаться</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Контакты</h4>
+        <div class="footer-contact-item">
+          <div class="footer-contact-icon">📞</div>
+          <div class="footer-contact-text"><a href="tel:+79001234567">+7 (900) 123-45-67</a></div>
+        </div>
+        <div class="footer-contact-item">
+          <div class="footer-contact-icon">✈️</div>
+          <div class="footer-contact-text"><a href="https://t.me/elena_rep_math">@elena_rep_math</a></div>
+        </div>
+        <div class="footer-contact-item">
+          <div class="footer-contact-icon">📧</div>
+          <div class="footer-contact-text"><a href="mailto:elena@repmath.ru">elena@repmath.ru</a></div>
+        </div>
+        <div class="footer-contact-item">
+          <div class="footer-contact-icon">🕐</div>
+          <div class="footer-contact-text">Пн–Сб, 09:00–21:00</div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Елена Александровна — Репетитор по математике и физике</p>
+      <p>Сделано с ❤️</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // ===== NAV SCROLL =====
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 50);
+  }, { passive: true });
+
+  // ===== BURGER =====
+  const burger = document.getElementById('burger');
+  const mobileNav = document.getElementById('mobileNav');
+  burger.addEventListener('click', () => {
+    burger.classList.toggle('open');
+    mobileNav.classList.toggle('open');
+  });
+  mobileNav.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      burger.classList.remove('open');
+      mobileNav.classList.remove('open');
+    });
+  });
+
+  // ===== SCROLL ANIMATIONS =====
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => observer.observe(el));
+
+  // ===== COUNTER ANIMATION =====
+  const counters = document.querySelectorAll('.counter');
+  let countersStarted = false;
+  const counterObserver = new IntersectionObserver((entries) => {
+    if (entries[0].isIntersecting && !countersStarted) {
+      countersStarted = true;
+      counters.forEach(counter => {
+        const target = +counter.dataset.target;
+        const duration = 1800;
+        const step = target / (duration / 16);
+        let current = 0;
+        const timer = setInterval(() => {
+          current += step;
+          if (current >= target) {
+            counter.textContent = target;
+            clearInterval(timer);
+          } else {
+            counter.textContent = Math.floor(current);
+          }
+        }, 16);
+      });
+    }
+  }, { threshold: 0.4 });
+
+  const statsSection = document.getElementById('stats');
+  if (statsSection) counterObserver.observe(statsSection);
+
+  // ===== SLIDER =====
+  const track = document.getElementById('sliderTrack');
+  const slides = track.querySelectorAll('.review-card');
+  const dotsContainer = document.getElementById('sliderDots');
+  let current = 0;
+  let autoTimer;
+
+  function goTo(idx) {
+    current = (idx + slides.length) % slides.length;
+    track.style.transform = `translateX(-${current * 100}%)`;
+    dotsContainer.querySelectorAll('.slider-dot').forEach((d, i) => {
+      d.classList.toggle('active', i === current);
+    });
+  }
+
+  slides.forEach((_, i) => {
+    const dot = document.createElement('button');
+    dot.className = 'slider-dot' + (i === 0 ? ' active' : '');
+    dot.setAttribute('aria-label', `Отзыв ${i + 1}`);
+    dot.addEventListener('click', () => { resetAuto(); goTo(i); });
+    dotsContainer.appendChild(dot);
+  });
+
+  document.getElementById('sliderPrev').addEventListener('click', () => { resetAuto(); goTo(current - 1); });
+  document.getElementById('sliderNext').addEventListener('click', () => { resetAuto(); goTo(current + 1); });
+
+  function startAuto() { autoTimer = setInterval(() => goTo(current + 1), 5000); }
+  function resetAuto() { clearInterval(autoTimer); startAuto(); }
+  startAuto();
+
+  // Touch swipe for slider
+  let touchStartX = 0;
+  track.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
+  track.addEventListener('touchend', e => {
+    const dx = e.changedTouches[0].clientX - touchStartX;
+    if (Math.abs(dx) > 50) { resetAuto(); goTo(current + (dx < 0 ? 1 : -1)); }
+  }, { passive: true });
+
+  // ===== LIGHTBOX =====
+  const lightbox = document.getElementById('lightbox');
+  const lbIcon = document.getElementById('lbIcon');
+  const lbTitle = document.getElementById('lbTitle');
+  const lbDesc = document.getElementById('lbDesc');
+  const lbYear = document.getElementById('lbYear');
+
+  document.querySelectorAll('.diploma-card').forEach(card => {
+    card.addEventListener('click', () => {
+      lbIcon.textContent = card.dataset.icon;
+      lbTitle.textContent = card.dataset.title;
+      lbDesc.textContent = card.dataset.desc;
+      lbYear.textContent = '📅 Год: ' + card.dataset.year;
+      lightbox.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    });
+  });
+
+  function closeLightbox() {
+    lightbox.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  document.getElementById('lightboxClose').addEventListener('click', closeLightbox);
+  lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+
+  // ===== FORM =====
+  const form = document.getElementById('contactForm');
+  const formContent = document.getElementById('formContent');
+  const formSuccess = document.getElementById('formSuccess');
+
+  // Floating label for select
+  const selects = form.querySelectorAll('select');
+  selects.forEach(sel => {
+    function updateLabel() {
+      const label = sel.nextElementSibling;
+      if (label && label.tagName === 'LABEL') {
+        if (sel.value) {
+          label.style.top = '-10px';
+          label.style.fontSize = '.78rem';
+          label.style.color = 'var(--violet)';
+        } else {
+          label.style.top = '16px';
+          label.style.fontSize = '.95rem';
+          label.style.color = 'var(--gray)';
+        }
+      }
+    }
+    sel.addEventListener('change', updateLabel);
+    updateLabel();
+  });
+
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    let valid = true;
+    form.querySelectorAll('[required]').forEach(field => {
+      if (!field.value.trim()) {
+        field.style.borderColor = '#e17055';
+        valid = false;
+        setTimeout(() => field.style.borderColor = '', 2000);
+      }
+    });
+    if (!valid) return;
+
+    const btn = form.querySelector('.form-submit');
+    btn.textContent = '⏳ Отправляем...';
+    btn.disabled = true;
+
+    setTimeout(() => {
+      formContent.style.display = 'none';
+      formSuccess.style.display = 'block';
+    }, 1200);
+  });
+
+  // Smooth scroll offset for fixed nav
+  document.querySelectorAll('a[href^="#"]').forEach(link => {
+    link.addEventListener('click', e => {
+      const target = document.querySelector(link.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        const offset = 75;
+        const top = target.getBoundingClientRect().top + window.scrollY - offset;
+        window.scrollTo({ top, behavior: 'smooth' });
+      }
+    });
+  });
+</script>
+</body>
+</html>
